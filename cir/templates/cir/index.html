@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    Company Name:<input name="name" /><br>
+    CTC:<input name="ctc"/><br>
+    Date:<input name="date"/><br>
+    <div class="container">
+  <div class="dropdown">
+  <input name="e[]" type="checkbox" value="BTech"/>
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">BTech
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><input type="checkbox" name="b[]" value="CSE"/>CSE</li>
+      <li><input type="checkbox" name="b[]" value="ECE"/>ECE</li>
+      <li><input type="checkbox" name="b[]" value="EEE"/>EEE</li>
+      <li><input type="checkbox" name="b[]" value="MECH"/>Mech</li>
+      <li><input type="checkbox" name="b[]" value="Civil"/>Civil</li>
+      <li><input type="checkbox" name="b[]" value="Chem"/>Chem</li>
+      <li><input type="checkbox" name="b[]" value="EIE"/>EIE</li>
+      <li><input type="checkbox" name="b[]" value="AeroSpace"/>Aerospace</li>
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="dropdown">
+  <input name="e[]" type="checkbox" value="MTech"/>
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">MTech
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><input type="checkbox" name="b[]" value="CSE"/>CSE</li>
+        <li><input type="checkbox" name="b[]" value="CIE"/>Control & Instrumentation Engineering</li>
+        <li><input type="checkbox" name="b[]" value="CSSN"/>Cyber Security Systems & Networks</li>
+        <li><input type="checkbox" name="b[]" value="PowerEnergy"/>Power & Energy</li>
+        <li><input type="checkbox" name="b[]" value="Robotics"/>Robotics & Automation</li>
+        <li><input type="checkbox" name="b[]" value="ThermalFluids"/>Thermal & Fluids</li>
+        <li><input type="checkbox" name="b[]" value="VLSI"/>VLSI Design</li>
+        <li><input type="checkbox" name="b[]" value="WirelessNetworks"/>Wireless Networks & Applications</li>
+        <li><input type="checkbox" name="b[]" value="CommEng"/>Communication Engineering & Signal Processing</li>
+        <li><input type="checkbox" name="b[]" value="DataScience"/>Computer Science & Engineering - Data Science</li>
+        <li><input type="checkbox" name="b[]" value="EmbeddedSystem"/>Embedded Systems</li>
+        <li><input type="checkbox" name="b[]" value="PowerElectronics"/>Power Electronics</li>
+        <li><input type="checkbox" name="b[]" value="ThermalScience"/>Thermal Science & Energy Systems</li>
+        <li><input type="checkbox" name="b[]" value="Automotive"/>Automotive Engineering</li>
+        <li><input type="checkbox" name="b[]" value="Biomedical"/>Biomedical Engineering</li>
+        <li><input type="checkbox" name="b[]" value="ComputationalEngg"/>Computational Engineering & Networking</li>
+        <li><input type="checkbox" name="b[]" value="CyberSecurity"/>Cyber Security</li>
+        <li><input type="checkbox" name="b[]" value="EngineeringDesign"/>Engineering Design</li>
+        <li><input type="checkbox" name="b[]" value="ManufacturingEngg"/>Manufacturing Engineering</li>
+        <li><input type="checkbox" name="b[]" value="MaterialScience"/>Material Science</li>
+        <li><input type="checkbox" name="b[]" value="RemoteSensing"/>Remote Sensing & Wireless Sensor Networks</li>
+        <li><input type="checkbox" name="b[]" value="RenewableEnery"/>Renewable Energy Technologies</li>
+        <li><input type="checkbox" name="b[]" value="ConsEngg"/>Structural & Construction Engineering</li>
+    </ul>
+  </div>
+</div>
+    <button type="submit">click me!!</button>
+</form>
+</body>
+</html>
