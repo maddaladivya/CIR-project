@@ -1,95 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Search</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Home</title>
+  {% load static %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'cir/home.css' %}" />
 </head>
 <body>
-<form action="" method="post">
-    {% csrf_token %}
-    CTC:<input name="search" placeholder="Search" />
-    <a href="http://127.0.0.1:8000/cir1/exp"><button>Search</button></a>
-</form>
-<form action="" method="post">
-    {% csrf_token %}
-    Company:<input name="company" placeholder="Company Name" />
-    <a href="http://127.0.0.1:8000/cir1/exp"><button>Search</button></a>
-</form>
-<form action="" method="post" class="form">
-    {% csrf_token %}
-    FromDate: <input name="From date" />
-    ToDate: <input name="To date"/>
-    <a href="http://127.0.0.1:8000/cir1/exp"><button>Search</button></a><br>
-  </form>
-  <form action="" method="post" class="form">
-    {% csrf_token %}
-   <div class="container">
-  <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="bt">Tutorials
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li class="dropdown-submenu">
-        <button class="test">New dropdown <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><input type="submit" name="b[]" value="CSE"/></li>
-        <li><input type="submit" name="b[]" value="ECE"/></li>
-        <li><input type="submit" name="b[]" value="EEE"/></li>
-        <li><input type="submit" name="b[]" value="MECH"/></li>
-        <li><input type="submit" name="b[]" value="Civil"/></li>
-        <li><input type="submit" name="b[]" value="Chem"/></li>
-        <li><input type="submit" name="b[]" value="EIE"/></li>
-        <li><input type="submit" name="b[]" value="AeroSpace"/></li>
-        </ul>
-      </li>
-       <li class="dropdown-submenu">
-        <button class="test">New dropdown <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><input type="submit" name="b[]" value="CSE"/></li>
-        <li><input type="submit" name="b[]" value="Control & Instrumentation Engineering"/></li>
-        <li><input type="submit" name="b[]" value="Cyber Security Systems & Networks"/></li>
-        <li><input type="submit" name="b[]" value="Power & Energy"/></li>
-        <li><input type="submit" name="b[]" value="Robotics & Automation"/></li>
-        <li><input type="submit" name="b[]" value="Thermal & Fluids"/></li>
-        <li><input type="submit" name="b[]" value="VLSI Design"/></li>
-        <li><input type="submit" name="b[]" value="Wireless Networks & Applications"/></li>
-        <li><input type="submit" name="b[]" value="Communication Engineering & Signal Processing"/></li>
-        <li><input type="submit" name="b[]" value="Computer Science & Engineering - Data Science"/></li>
-        <li><input type="submit" name="b[]" value="Embedded Systems"/></li>
-        <li><input type="submit" name="b[]" value="Power Electronics"/></li>
-        <li><input type="submit" name="b[]" value="Thermal Science & Energy Systems"/></li>
-        <li><input type="submit" name="b[]" value="Automotive Engineering"/></li>
-        <li><input type="submit" name="b[]" value="Biomedical Engineering"/></li>
-        <li><input type="submit" name="b[]" value="Computational Engineering & Networking"/></li>
-        <li><input type="submit" name="b[]" value="Cyber Security"/></li>
-        <li><input type="submit" name="b[]" value="Engineering Design"/></li>
-        <li><input type="submit" name="b[]" value="Manufacturing Engineering"/></li>
-        <li><input type="submit" name="b[]" value="Material Science"/></li>
-        <li><input type="submit" name="b[]" value="Remote Sensing & Wireless Sensor Networks"/></li>
-        <li><input type="submit" name="b[]" value="Renewable Energy Technologies"/></li>
-        <li><input type="submit" name="b[]" value="Structural & Construction Engineering"/></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <div class="bar">
+  <ul>
+    <li><a class="active" href="http://127.0.0.1:8000/cir1/post/">Post</a></li>
+    <li><a href="http://127.0.0.1:8000/cir1/search/">Search</a></li>
+    <li><a href="http://127.0.0.1:8000/cir1/export">Export</a></li>
+    <li><a href="https://www.amrita.edu/contact-us">Contact</a></li>
+  </ul>
+</div>
+<div id="footer">
+  <!--<button class="btn" type="button"><i class="material-icons" style="color:white">menu</i>About</button>-->
+  <button class="btn" type="button"><i class="fa fa-angle-double-down" style="color:white"></i></button>
+</div>
+<div class="second">
+  <h1>About Amrita</h1>
+  <p>The Amrita Vishwa Vidyapeetham is a dream come true,<br> a dream nursed by Mata Amritanandamayi to have a centre of excellence in learning for the benefit of all.<br> With headquarters at Coimbatore and campuses at Amritapuri, Kochi, Bengaluru and Mysuru, <br>Amrita Vishwa Vidyapeetham has emerged as one of the fastest growing institutions of higher learning in India.<br> In less than two decades, Amrita Vishwa Vidyapeetham has blossomed into a multi-disciplinary,<br> multicampus centre that offers over 150+ undergraduate,<br> postgraduate and doctoral programmes</p>
+
+  <button class="btn1" type="button"><i class="fa fa-angle-double-down" style="color:white"></i></button>
 </div>
 
+<div class="third">
+  <h1>About CIR</h1>
+  <p>The Directorate of Corporate & Industry Relations (CIR) <br>strives to achieve excellent placement of students each year<br>. A proven track record of consistent high quality placements year-on-year<br> is one of the reasons for many bright students opting for admissions in Amrita.<br> Placements for students of engineering, arts & sciences and allied courses are handled by one group of experts<br> with Head-Placement at the top,<br> with support from Placement Managers positioned at other campuses. <br>Placements at Amrita have always been excellent.</p>
 
-<script>
-$(document).ready(function(){
-  $('.dropdown-submenu button.test').on("click", function(e){
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-  });
+  <button class="btn2" type="button"><i class="fa fa-angle-double-down" style="color:white"></i></button>
+</div>
+<div class="fourth">
+  <p> Thank You!</p>
+</div>
+
+<script language="javascript">
+	$(".btn").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".second").offset().top},
+        'slow');
 });
 </script>
 
-  </form>
+<script language="javascript">
+	$(".btn1").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".third").offset().top},
+        'slow');
+});
+</script>
+
+<script language="javascript">
+	$(".btn2").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".fourth").offset().top},
+        'slow');
+});
+</script>
 </body>
 </html>

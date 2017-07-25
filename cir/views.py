@@ -4,13 +4,12 @@ from django.shortcuts import render
 import xlwt
 
 # Create your views here.
-from xlrd.xldate import xldate_from_date_tuple, xldate_as_tuple
 
 from cir.models import Company_details
 
 
 def home(request):
-    temp = 'cir/main.html'
+    temp = 'cir/home.html'
     return render(request,temp,{})
 
 
@@ -26,12 +25,12 @@ def post_list(request):
         template = "cir/home.html"
         return render(request,template,{})
     model = Company_details
-    temp = 'cir/index.html'
+    temp = 'cir/post.html'
     return render(request,temp,{})
 
 
 def export_data(request):
-    response = HttpResponse(content_type='cir/home.html')
+    response = HttpResponse(content_type='cir/template.html')
     response['Content-Disposition'] = 'attachment; filename="sheets/data.xls"'
 
     wb = xlwt.Workbook(encoding='utf-8')
@@ -142,7 +141,7 @@ def export_data_query(request):
 
         wb.save(response)
         return response
-    temp = 'cir/home.html'
+    temp = 'cir/search.html'
     return render(request, temp, {})
 
 
