@@ -2,12 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
+<form action="" method="post">
+    {% csrf_token %}
+    CTC:<input name="search" placeholder="Search" />
+    <a href="http://127.0.0.1:8000/cir1/exp"><button>Search</button></a>
+</form>
+<form action="" method="post">
+    {% csrf_token %}
+    Company:<input name="company" placeholder="Company Name" />
+    <a href="http://127.0.0.1:8000/cir1/exp"><button>Search</button></a>
+</form>
+<form action="" method="post" class="form">
+    {% csrf_token %}
+    FromDate: <input name="From date" />
+    ToDate: <input name="To date"/>
+    <a href="http://127.0.0.1:8000/cir1/exp"><button>Search</button></a><br>
+  </form>
+  <form action="" method="post" class="form">
+    {% csrf_token %}
+   <div class="container">
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="bt">Tutorials
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li class="dropdown-submenu">
+        <button class="test">New dropdown <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><input type="submit" name="b[]" value="CSE"/></li>
+        <li><input type="submit" name="b[]" value="ECE"/></li>
+        <li><input type="submit" name="b[]" value="EEE"/></li>
+        <li><input type="submit" name="b[]" value="MECH"/></li>
+        <li><input type="submit" name="b[]" value="Civil"/></li>
+        <li><input type="submit" name="b[]" value="Chem"/></li>
+        <li><input type="submit" name="b[]" value="EIE"/></li>
+        <li><input type="submit" name="b[]" value="AeroSpace"/></li>
+        </ul>
+      </li>
+       <li class="dropdown-submenu">
+        <button class="test">New dropdown <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><input type="submit" name="b[]" value="CSE"/></li>
+        <li><input type="submit" name="b[]" value="Control & Instrumentation Engineering"/></li>
+        <li><input type="submit" name="b[]" value="Cyber Security Systems & Networks"/></li>
+        <li><input type="submit" name="b[]" value="Power & Energy"/></li>
+        <li><input type="submit" name="b[]" value="Robotics & Automation"/></li>
+        <li><input type="submit" name="b[]" value="Thermal & Fluids"/></li>
+        <li><input type="submit" name="b[]" value="VLSI Design"/></li>
+        <li><input type="submit" name="b[]" value="Wireless Networks & Applications"/></li>
+        <li><input type="submit" name="b[]" value="Communication Engineering & Signal Processing"/></li>
+        <li><input type="submit" name="b[]" value="Computer Science & Engineering - Data Science"/></li>
+        <li><input type="submit" name="b[]" value="Embedded Systems"/></li>
+        <li><input type="submit" name="b[]" value="Power Electronics"/></li>
+        <li><input type="submit" name="b[]" value="Thermal Science & Energy Systems"/></li>
+        <li><input type="submit" name="b[]" value="Automotive Engineering"/></li>
+        <li><input type="submit" name="b[]" value="Biomedical Engineering"/></li>
+        <li><input type="submit" name="b[]" value="Computational Engineering & Networking"/></li>
+        <li><input type="submit" name="b[]" value="Cyber Security"/></li>
+        <li><input type="submit" name="b[]" value="Engineering Design"/></li>
+        <li><input type="submit" name="b[]" value="Manufacturing Engineering"/></li>
+        <li><input type="submit" name="b[]" value="Material Science"/></li>
+        <li><input type="submit" name="b[]" value="Remote Sensing & Wireless Sensor Networks"/></li>
+        <li><input type="submit" name="b[]" value="Renewable Energy Technologies"/></li>
+        <li><input type="submit" name="b[]" value="Structural & Construction Engineering"/></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
 
-<input name="search" placeholder="Search"/>
-<a href=""><button>Search</button></a>
 
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu button.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
+
+  </form>
 </body>
 </html>

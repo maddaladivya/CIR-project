@@ -5,6 +5,8 @@ from cir.views import post_list
 
 urlpatterns = [
     url(r'^export/', views.export_data, name="export"),
-    url(r'^post/(?P<ak>[0-9]+)/', post_list, name='post'),
+    url(r'^post/', post_list, name='post'),
+    url(r'^exp/', views.export_data_query, name="query"),
+    url(r'^$', views.home, name="home"),
 ]
 
