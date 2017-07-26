@@ -1,0 +1,131 @@
+body {
+  background-image: url("https://www.amrita.edu/sites/default/files/campus_images/amrita-university-amritapuri.jpg");
+  background-repeat: no-repeat;
+  background-position: 30% 24%;
+  background-size: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: auto;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 22px;
+    text-decoration: none;
+    font-size: 150%;
+
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+#footer {
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  bottom: 500px;
+  left: 0px;
+  right: 0px;
+  background-color: inherit;
+  text-align: center;
+}
+.second {
+  position: absolute;
+  width: 100%;
+  top: 700px;
+  left: 0px;
+  right: 70px;
+  text-align: center;
+  font-size: 120%;
+}
+
+.third {
+  position: absolute;
+  width: 100%;
+  top: 1400px;
+  left: 0px;
+  right: 70px;
+  text-align: center;
+  font-size: 120%;
+}
+
+.fourth {
+  position: absolute;
+  width: 100%;
+  top: 2100px;
+  left: 0px;
+  right: 70px;
+  text-align: center;
+  font-size: 300%;
+}
+
+.btn {
+  display:block;
+  height: 50px;
+  width: 50px;
+  background:#000;
+  border-radius: 100%;
+  border: 1px white;
+  position: absolute;
+  left:600px;
+  top:390px;
+
+}
+
+.btn1 {
+  display:block;
+  height: 50px;
+  width: 50px;
+  background:#000;
+  border-radius: 100%;
+  border: 1px white;
+  position: absolute;
+  left:600px;
+  top:390px;
+
+}
+
+.btn2 {
+  display:block;
+  height: 50px;
+  width: 50px;
+  background:#000;
+  border-radius: 100%;
+  border: 1px white;
+  position: absolute;
+  left:600px;
+  top:390px;
+
+}
+
+button{
+    background-color: #fff;
+    border: none;
+    color: black;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    left:1200px;
+    top:3700px;
+  }
