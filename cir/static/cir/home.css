@@ -1,9 +1,9 @@
-body {
+/*body {
   background-image: url("https://www.amrita.edu/sites/default/files/campus_images/amrita-university-amritapuri.jpg");
   background-repeat: no-repeat;
   background-position: 30% 24%;
   background-size: 100%;
-}
+}*/
 
 ul {
     list-style-type: none;
@@ -19,6 +19,13 @@ ul {
 
 li {
     float: right;
+}
+
+.image {
+  background-image: url("https://www.amrita.edu/sites/default/files/campus_images/amrita-university-amritapuri.jpg");
+  background-repeat: no-repeat;
+  background-position: 30% 24%;
+  background-size: 100%;
 }
 
 li a {
