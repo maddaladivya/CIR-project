@@ -1,7 +1,6 @@
 /*body {
   background-image: url("https://www.amrita.edu/sites/default/files/campus_images/amrita-university-amritapuri.jpg");
   background-repeat: no-repeat;
-  background-position: 30% 24%;
   background-size: 100%;
 }*/
 
@@ -21,12 +20,12 @@ li {
     float: right;
 }
 
-.image {
+/*.image {
   background-image: url("https://www.amrita.edu/sites/default/files/campus_images/amrita-university-amritapuri.jpg");
   background-repeat: no-repeat;
   background-position: 30% 24%;
   background-size: 100%;
-}
+}*/
 
 li a {
     display: block;
@@ -43,10 +42,13 @@ li a:hover {
 }
 
 #footer {
+    background-image: url("https://www.amrita.edu/sites/default/files/campus_images/amrita-university-amritapuri.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
   position: absolute;
   width: 100%;
   top: 70px;
-  bottom: 500px;
+  bottom: 100px;
   left: 0px;
   right: 0px;
   background-color: inherit;
