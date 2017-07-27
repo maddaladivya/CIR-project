@@ -8,16 +8,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="{% static 'cir/home.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-  <div class="bar">
-  <ul>
-    <li><a class="active" href="http://127.0.0.1:8000/cir1/post/">Post</a></li>
-    <li><a href="http://127.0.0.1:8000/cir1/search/">Search</a></li>
-    <li><a href="http://127.0.0.1:8000/cir1/export">Export</a></li>
-    <li><a href="https://www.amrita.edu/contact-us">Contact</a></li>
-  </ul>
-</div>
+    <nav class="navbar navbar-inverse bs-dark">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a class="active" href="http://127.0.0.1:8000/cir1/post/">Post <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="http://127.0.0.1:8000/cir1/export">Export <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="https://www.amrita.edu/contact-us">Contact <span class="sr-only">(current)</span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1:8000/cir1/search">Search by Company</a></li>
+                <li><a href="http://127.0.0.1:8000/cir1/search">Search by CTC</a></li>
+                <li><a href="http://127.0.0.1:8000/cir1/search">Search by Date</a></li>
+                <li><a href="http://127.0.0.1:8000/cir1/search">Search by Branch</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </nav>
 <div class="image">
   
 </div>
