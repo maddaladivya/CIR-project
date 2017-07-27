@@ -12,31 +12,15 @@
 
 </head>
 <body>
-<form action="" method="post" class="form-wrapper cf">
-    {% csrf_token %}
-    <input name="search" placeholder="Search" />
-    <a href="http://127.0.0.1:8000/cir1/search"><button>Search</button></a>
-</form>
-<form action="" method="post" class="form-wrapper cf">
-    {% csrf_token %}
-    <input name="company" placeholder="Company Name" />
-    <a href="http://127.0.0.1:8000/cir1/search"><button>Search</button></a>
-</form>
-<form action="" method="post" class="form" class="form-wrapper cf">
-    {% csrf_token %}
-    FromDate: <input name="From date" />
-    ToDate: <input name="To date"/>
-    <a href="http://127.0.0.1:8000/cir1/search"><button>Search</button></a><br>
-  </form>
   <form action="" method="post" class="form" class="form-wrapper cf">
     {% csrf_token %}
    <div class="container">
   <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="bt">Tutorials
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="bt">Branch
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li class="dropdown-submenu">
-        <button class="test">New dropdown <span class="caret"></span></button>
+        <button class="test">Btech <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li><input type="submit" name="b[]" value="CSE"/></li>
         <li><input type="submit" name="b[]" value="ECE"/></li>
@@ -49,7 +33,7 @@
         </ul>
       </li>
        <li class="dropdown-submenu">
-        <button class="test">New dropdown <span class="caret"></span></button>
+        <button class="test">Mtech <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li><input type="submit" name="b[]" value="CSE"/></li>
         <li><input type="submit" name="b[]" value="Control & Instrumentation Engineering"/></li>

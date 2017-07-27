@@ -62,18 +62,13 @@ def export_data(request):
     return response
 
 
-def export_data_query(request):
+def export_ctc(request):
     if request.method == "POST":
         response = HttpResponse(content_type='cir/home.html')
         response['Content-Disposition'] = 'attachment; filename="sheets/query.xls"'
         s = request.POST.get('search')
-        company = request.POST.get('company')
-        fromdate = request.POST.get('Fromdate')
-        todate = request.POST.get('Todate')
-        branch = request.POST.get('b[]')
         wb = xlwt.Workbook(encoding='utf-8')
         ws = wb.add_sheet('Company_details')
-        print fromdate
         # Sheet header, first row
         row_num = 0
 
@@ -103,6 +98,37 @@ def export_data_query(request):
                             continue
                     else:
                         continue
+        wb.save(response)
+        return response
+    temp = 'cir/search_ctc.html'
+    return render(request, temp, {})
+
+
+def export_date(request):
+    if request.method == "POST":
+        response = HttpResponse(content_type='cir/home.html')
+        response['Content-Disposition'] = 'attachment; filename="sheets/query.xls"'
+        fromdate = request.POST.get('Fromdate')
+        todate = request.POST.get('Todate')
+        wb = xlwt.Workbook(encoding='utf-8')
+        ws = wb.add_sheet('Company_details')
+        # Sheet header, first row
+        row_num = 0
+
+        font_style = xlwt.XFStyle()
+        font_style.font.bold = True
+
+        columns = ['comp_name', 'comp_ctc','comp_date', 'eligibility', 'branch']
+
+        for col_num in range(len(columns)):
+            ws.write(row_num, col_num, columns[col_num], font_style)
+
+        # Sheet body, remaining rows
+        font_style = xlwt.XFStyle()
+        ctc = Company_details.objects.values_list('comp_name', 'comp_ctc','comp_date', 'eligibility', 'branch')
+        rowno = 1
+        colno = 0
+
         if fromdate != None:
             rowno = 1
             colno = 0
@@ -116,7 +142,34 @@ def export_data_query(request):
                             for i in range(0, 5, 1):
                                 ws.write(rowno, colno + i, str(row[col_num + i]), font_style)
                             rowno += 1
+        wb.save(response)
+        return response
+    temp = 'cir/search_date.html'
+    return render(request, temp, {})
 
+def export_branch(request):
+    if request.method == "POST":
+        response = HttpResponse(content_type='cir/home.html')
+        response['Content-Disposition'] = 'attachment; filename="sheets/query.xls"'
+        branch = request.POST.get('b[]')
+        wb = xlwt.Workbook(encoding='utf-8')
+        ws = wb.add_sheet('Company_details')
+        # Sheet header, first row
+        row_num = 0
+
+        font_style = xlwt.XFStyle()
+        font_style.font.bold = True
+
+        columns = ['comp_name', 'comp_ctc','comp_date', 'eligibility', 'branch']
+
+        for col_num in range(len(columns)):
+            ws.write(row_num, col_num, columns[col_num], font_style)
+
+        # Sheet body, remaining rows
+        font_style = xlwt.XFStyle()
+        ctc = Company_details.objects.values_list('comp_name', 'comp_ctc','comp_date', 'eligibility', 'branch')
+        rowno = 1
+        colno = 0
         if  branch != None:
             rowno = 1
             colno = 0
@@ -129,6 +182,34 @@ def export_data_query(request):
                                 for i in range(0, 5, 1):
                                     ws.write(rowno, colno + i, str(row[col_num + i]), font_style)
                                 rowno += 1
+        wb.save(response)
+        return response
+    temp = 'cir/search_branch.html'
+    return render(request, temp, {})
+
+def export_company(request):
+    if request.method == "POST":
+        response = HttpResponse(content_type='cir/home.html')
+        response['Content-Disposition'] = 'attachment; filename="sheets/query.xls"'
+        company = request.POST.get('company')
+        wb = xlwt.Workbook(encoding='utf-8')
+        ws = wb.add_sheet('Company_details')
+        # Sheet header, first row
+        row_num = 0
+
+        font_style = xlwt.XFStyle()
+        font_style.font.bold = True
+
+        columns = ['comp_name', 'comp_ctc','comp_date', 'eligibility', 'branch']
+
+        for col_num in range(len(columns)):
+            ws.write(row_num, col_num, columns[col_num], font_style)
+
+        # Sheet body, remaining rows
+        font_style = xlwt.XFStyle()
+        ctc = Company_details.objects.values_list('comp_name', 'comp_ctc','comp_date', 'eligibility', 'branch')
+        rowno = 1
+        colno = 0
         if company != None:
             for row in ctc:
                 row_num += 1
@@ -141,8 +222,12 @@ def export_data_query(request):
 
         wb.save(response)
         return response
-    temp = 'cir/search.html'
+    temp = 'cir/search_company.html'
     return render(request, temp, {})
+
+
+
+
 
 
 
