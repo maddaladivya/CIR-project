@@ -49,16 +49,16 @@ p {
   text-decoration: none;
   color: #1d9b6c;
 }
-.drop{
-  background-color: #000;
+.drop {
+  color: #42DCA3;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 .drop:hover,
-.drop:focus {
+.drop:focus{
   text-decoration: none;
-  color: #767979;
+  color: #000000;
 }
 
 .light {
@@ -136,7 +136,7 @@ p {
   padding: 100px 0;
   text-align: center;
   color: white;
-  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpe8FCx9tsiUtU8DOFMwWsEzbp4CoyEVoOWSKrqMgB6cLN3-PV") no-repeat bottom center scroll;
+  background: url("https://static.pexels.com/photos/529926/pexels-photo-529926.jpeg") no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
