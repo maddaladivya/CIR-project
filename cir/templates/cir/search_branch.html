@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Search</title>
+    {% load static %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'cir/sty.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'cir/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 </head>
 <body>
   <form action="" method="post" class="form" class="form-wrapper cf">
     {% csrf_token %}
-   <div class="container">
-  <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="bt">Branch
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li class="dropdown-submenu">
-        <button class="test">Btech <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><input type="submit" name="b[]" value="CSE"/></li>
+      <div class="container">
+  <h1 class="title">Branch</h1>
+  <ul>
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown">BTech <i class="icon-arrow"></i></a>
+      <ul class="dropdown-menu">
+        <li><input type="submit" name="b[]" value="CSE"/></li>
         <li><input type="submit" name="b[]" value="ECE"/></li>
         <li><input type="submit" name="b[]" value="EEE"/></li>
         <li><input type="submit" name="b[]" value="MECH"/></li>
@@ -30,12 +31,12 @@
         <li><input type="submit" name="b[]" value="Chem"/></li>
         <li><input type="submit" name="b[]" value="EIE"/></li>
         <li><input type="submit" name="b[]" value="AeroSpace"/></li>
-        </ul>
-      </li>
-       <li class="dropdown-submenu">
-        <button class="test">Mtech <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><input type="submit" name="b[]" value="CSE"/></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown">MTech <i class="icon-arrow"></i></a>
+      <ul class="dropdown-menu">
+        <li><input type="submit" name="b[]" value="CSE"/></li>
         <li><input type="submit" name="b[]" value="Control & Instrumentation Engineering"/></li>
         <li><input type="submit" name="b[]" value="Cyber Security Systems & Networks"/></li>
         <li><input type="submit" name="b[]" value="Power & Energy"/></li>
@@ -58,23 +59,11 @@
         <li><input type="submit" name="b[]" value="Remote Sensing & Wireless Sensor Networks"/></li>
         <li><input type="submit" name="b[]" value="Renewable Energy Technologies"/></li>
         <li><input type="submit" name="b[]" value="Structural & Construction Engineering"/></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+      </ul>
+    </li>
+  </ul>
 </div>
-
-
-<script>
-$(document).ready(function(){
-  $('.dropdown-submenu button.test').on("click", function(e){
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-  });
-});
-</script>
-
+      <script src="{% static 'cir/index.js' %}"></script>
   </form>
 </body>
 </html>

@@ -8,8 +8,9 @@
 body {
     margin: 30px 0px;
 }
+
 #footer {
-    background-image: url("https://www.amrita.edu/sites/default/files/campus_images/amrita-university-amritapuri.jpg");
+    background-image: url("/static/media/amrita.jpeg");
     background-repeat: no-repeat;
     background-size: 100%;
   position: absolute;

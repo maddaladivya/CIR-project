@@ -9,7 +9,7 @@ from cir.models import Company_details
 
 
 def home(request):
-    temp = 'cir/home.html'
+    temp = 'cir/index.html'
     return render(request,temp,{})
 
 
