@@ -92,7 +92,7 @@
 	               	</div>
 	            </div>
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+					<form class="form-horizontal" id="form" method="post" action="#">
 						{% csrf_token %}
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Company Name</label>
@@ -109,7 +109,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-inr" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="ctc" placeholder="CTC"/>
+									<input type="text" class="form-control" id="ctc" name="ctc" placeholder="CTC"/>
 								</div>
 							</div>
 						</div>
@@ -119,7 +119,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="date" placeholder="Date"/>
+									<input type="text" class="form-control" id="date" name="date" placeholder="Date"/>
 								</div>
 							</div>
 						</div>
@@ -208,5 +208,19 @@
             }
             $("#mtech").click(onCheckChangem).change(onCheckChangem);
         </script>
+    <script>
+    $('#form').submit(function() {
+      if($('#name').val() == ''){
+        alert('Please fill Company name.');
+  }
+});
+    </script>
+    <script>
+    $('#form').submit(function() {
+      if($('#ctc').val() == ''){
+        alert('Please fill CTC.');
+  }
+});
+    </script>
 	</body>
 </html>
