@@ -20,11 +20,11 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 35px;
+  margin: 0 0 0px;
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 p {
   margin: 0 0 25px;
@@ -38,29 +38,17 @@ p {
     line-height: 1.6;
   }
 }
-.link {
+a {
   color: #42DCA3;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.link:hover,
-.link:focus {
+a:hover,
+a:focus {
   text-decoration: none;
   color: #1d9b6c;
 }
-.drop {
-  color: #42DCA3;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.drop:hover,
-.drop:focus{
-  text-decoration: none;
-  color: #000000;
-}
-
 .light {
   font-weight: 400;
 }
@@ -70,6 +58,9 @@ p {
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: black;
+}
+.dropdown-menu{
+  background-color: transparent;
 }
 .navbar-custom .navbar-toggle {
   color: white;
@@ -135,8 +126,8 @@ p {
   height: auto;
   padding: 100px 0;
   text-align: center;
-  color: white;
-  background: url("https://static.pexels.com/photos/529926/pexels-photo-529926.jpeg") no-repeat bottom center scroll;
+  color: black;
+  background: url("https://static.pexels.com/photos/389819/pexels-photo-389819.jpeg") no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
