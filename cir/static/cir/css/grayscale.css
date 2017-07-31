@@ -50,15 +50,16 @@ p {
   color: #1d9b6c;
 }
 .drop {
-  color: #42DCA3;
+  color: #000000;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.drop:hover,
+.drop:hover {
+  color: #111111;
+}
 .drop:focus{
   text-decoration: none;
-  color: #000000;
 }
 
 .light {
@@ -236,7 +237,7 @@ p {
   width: 100%;
   padding: 50px 0;
   color: white;
-  background: url(../img/amrita1.jpg) no-repeat center center scroll;
+
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
