@@ -49,6 +49,22 @@ a:focus {
   text-decoration: none;
   color: #1d9b6c;
 }
+<<<<<<< HEAD
+=======
+.drop {
+  color: #000000;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.drop:hover {
+  color: #111111;
+}
+.drop:focus{
+  text-decoration: none;
+}
+
+>>>>>>> 8196f1b24ae591610378bf7e5c47c77d43c3c0b4
 .light {
   font-weight: 400;
 }
@@ -227,7 +243,7 @@ a:focus {
   width: 100%;
   padding: 50px 0;
   color: white;
-  background: url(../img/amrita1.jpg) no-repeat center center scroll;
+
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
