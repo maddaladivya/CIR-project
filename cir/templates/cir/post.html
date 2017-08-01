@@ -12,6 +12,11 @@
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
         <style>
             body, html{
             height: 100%;
@@ -79,7 +84,12 @@
             }
 
         </style>
-		<title>Admin</title>
+        <script>
+    $( function() {
+    $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+     } );
+     </script>
+		<title>Post</title>
 	</head>
 	<body>
     <div class="company">
@@ -119,7 +129,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="date" placeholder="Date" required/>
+									<input type="text" class="w3-input w3-border" name="date" id="datepicker" placeholder="Date" required/>
 								</div>
 							</div>
 						</div>
@@ -131,7 +141,7 @@
 									<span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
 									<div class="container">
   <div class="dropdown">
-  <input name="e[]" type="checkbox" value="BTech" id="btech"/>
+  <input name="e[]" type="checkbox" value="BTech" id="btech" required/>
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="bt" onclick="onCheckChangeb()">BTech
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
@@ -148,7 +158,7 @@
 </div>
 <div class="container">
   <div class="dropdown">
-  <input name="e[]" type="checkbox" value="MTech" id="mtech"/>
+  <input name="e[]" type="checkbox" value="MTech" id="mtech" required/>
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="mt" onclick="onCheckChangem()">MTech
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
@@ -190,6 +200,7 @@
 			</div>
 		</div>
     </div>
+    
 		<script>
             function onCheckChangeb() {
                 if ($("#btech").is(':checked'))
