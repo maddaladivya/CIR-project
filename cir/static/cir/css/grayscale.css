@@ -49,8 +49,7 @@ a:focus {
   text-decoration: none;
   color: #1d9b6c;
 }
-<<<<<<< HEAD
-=======
+
 .drop {
   color: #000000;
   -webkit-transition: all 0.2s ease-in-out;
@@ -64,7 +63,7 @@ a:focus {
   text-decoration: none;
 }
 
->>>>>>> 8196f1b24ae591610378bf7e5c47c77d43c3c0b4
+
 .light {
   font-weight: 400;
 }
@@ -77,6 +76,7 @@ a:focus {
 }
 .dropdown-menu{
   background-color: transparent;
+  color: white;
 }
 .navbar-custom .navbar-toggle {
   color: white;

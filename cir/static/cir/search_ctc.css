@@ -1,3 +1,10 @@
+.row{
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 25vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
 .search-form .form-group {
   float: right !important;
   transition: all 0.35s, border-radius 0s;
