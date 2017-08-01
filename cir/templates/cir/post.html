@@ -222,5 +222,19 @@
   }
 });
     </script>
+    <script>
+    $('#form').submit(function() {
+      if($('#date').val() == ''){
+        alert('Please fill DATE.');
+  }
+});
+    </script>
+    <script>
+    $('#form').submit(function() {
+      if($('#btech').val() == '' || $('#mtech').val() == ''){
+        alert('Please fill Eligibility.');
+  }
+});
+    </script>
 	</body>
 </html>

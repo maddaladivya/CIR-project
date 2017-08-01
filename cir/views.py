@@ -191,7 +191,7 @@ def export_company(request):
     if request.method == "POST":
         response = HttpResponse(content_type='cir/home.html')
         response['Content-Disposition'] = 'attachment; filename="sheets/query.xls"'
-        company = request.POST.get('company')
+        company = request.POST.get('search')
         wb = xlwt.Workbook(encoding='utf-8')
         ws = wb.add_sheet('Company_details')
         # Sheet header, first row
