@@ -22,7 +22,7 @@ def post_list(request):
         b = request.POST.getlist('b[]')
         u = Company_details.objects.create(comp_name=cname, comp_ctc=cctc, comp_date=date,eligibility=e, branch=b)
         u.save()
-        template = "cir/home.html"
+        template = "cir/index.html"
         return render(request,template,{})
     model = Company_details
     temp = 'cir/post.html'
@@ -224,11 +224,3 @@ def export_company(request):
         return response
     temp = 'cir/search_company.html'
     return render(request, temp, {})
-
-
-
-
-
-
-
-
