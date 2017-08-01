@@ -75,7 +75,7 @@ a:focus {
   background-color: black;
 }
 .dropdown-menu{
-  background-color: transparent;
+  background-color: #f2d7d5;
   color: white;
 }
 .navbar-custom .navbar-toggle {
