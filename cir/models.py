@@ -10,7 +10,7 @@ ELIGIBILITY_CHOICES = (
     ('MTech','MTech'),
 )
 BRANCHES = (
-    ('CSE','CSE'),
+    ('BT-CSE','BT-CSE'),
     ('ECE','ECE'),
     ('MECH','MECH'),
     ('EEE','EEE'),
@@ -18,7 +18,7 @@ BRANCHES = (
     ('Chem','Chem'),
     ('EIE','EIE'),
     ('AeroSpace','AeroSpace'),
-    ('CSE','CSE'),
+    ('MT-CSE','MT-CSE'),
     ('Control & Instrumentation Engineering','Control & Instrumentation Engineering'),
     ('Cyber Security Systems & Networks','Cyber Security Systems & Networks'),
     ('Power & Energy','Power & Energy'),
