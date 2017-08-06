@@ -20,7 +20,8 @@ def post_list(request):
         date = request.POST.get('date')
         e = request.POST.getlist('e[]')
         b = request.POST.getlist('b[]')
-        u = Company_details.objects.create(comp_name=cname, comp_ctc=cctc, comp_date=date,eligibility=e, branch=b)
+        file = request.FILES['file']
+        u = Company_details.objects.create(comp_name=cname, comp_ctc=cctc, comp_date=date,eligibility=e, branch=b, document=file)
         u.save()
         template = "cir/index.html"
         return render(request,template,{})
@@ -42,7 +43,7 @@ def export_data(request):
     font_style = xlwt.XFStyle()
     font_style.font.bold = True
 
-    columns = ['comp_name', 'comp_ctc', 'comp_date', 'eligibility', 'branch']
+    columns = ['comp_name', 'comp_ctc', 'comp_date', 'eligibility', 'branch','document']
 
     for col_num in range(len(columns)):
         ws.write(row_num, col_num, columns[col_num], font_style)
@@ -50,7 +51,7 @@ def export_data(request):
     # Sheet body, remaining rows
     font_style = xlwt.XFStyle()
 
-    rows = Company_details.objects.all().values_list( 'comp_name', 'comp_ctc', 'comp_date', 'eligibility', 'branch')
+    rows = Company_details.objects.all().values_list( 'comp_name', 'comp_ctc', 'comp_date', 'eligibility', 'branch','document')
     print rows
     for row in rows:
         print row

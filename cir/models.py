@@ -51,6 +51,7 @@ class Company_details(models.Model):
     comp_date = models.DateField(default=0)
     eligibility = MultiSelectField(choices=ELIGIBILITY_CHOICES)
     branch = MultiSelectField(choices=BRANCHES)
+    document = models.FileField(upload_to='documents/', default='')
 
     def __str__(self):
         return self.comp_name
