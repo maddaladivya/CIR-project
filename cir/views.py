@@ -13,7 +13,7 @@ def home(request):
     return render(request,temp,{})
 
 def post_list(request):
-    if request.method == "POST"  and request.FILES['myfile']:
+    if request.method == "POST":
         cname = request.POST.get('name')
         cctc = request.POST.get('ctc')
         date = request.POST.get('date')
