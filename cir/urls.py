@@ -1,7 +1,9 @@
 from django.conf.urls import url
+from django.conf.urls.static import static
 
 from cir import views
 from cir.views import post_list
+from cir1 import settings
 
 urlpatterns = [
     url(r'^export/', views.export_data, name="export"),
@@ -11,5 +13,4 @@ urlpatterns = [
     url(r'^search_branch', views.export_branch, name="branch"),
     url(r'^search_date', views.export_date, name="date"),
     url(r'^home', views.home, name="home"),
-    url(r'^upload', views.simple_upload, name="upload"),
 ]

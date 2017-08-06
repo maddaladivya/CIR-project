@@ -32,8 +32,8 @@ def post_list(request):
         date = request.POST.get('date')
         e = request.POST.getlist('e[]')
         b = request.POST.getlist('b[]')
-        myfile = request.FILES['myfile']
-        u = Company_details.objects.create(comp_name=cname, comp_ctc=cctc, comp_date=date, document=myfile, eligibility=e, branch=b)
+        file = request.FILES['file']
+        u = Company_details.objects.create(comp_name=cname, comp_ctc=cctc, comp_date=date,eligibility=e, branch=b, document=file)
         u.save()
         template = "cir/index.html"
         return render(request,template,{})
