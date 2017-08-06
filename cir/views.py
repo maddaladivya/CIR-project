@@ -12,19 +12,6 @@ def home(request):
     temp = 'cir/index.html'
     return render(request,temp,{})
 
-
-def simple_upload(request):
-    if request.method == 'POST' and request.FILES['myfile']:
-        myfile = request.FILES['myfile']
-        fs = FileSystemStorage()
-        filename = fs.save(myfile.name, myfile)
-        uploaded_file_url = fs.url(filename)
-        return render(request, 'cir/simple_upload.html', {
-            'uploaded_file_url': uploaded_file_url
-        })
-    return render(request, 'cir/simple_upload.html')
-
-
 def post_list(request):
     if request.method == "POST"  and request.FILES['myfile']:
         cname = request.POST.get('name')
