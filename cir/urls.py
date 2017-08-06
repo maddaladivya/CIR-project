@@ -10,6 +10,6 @@ urlpatterns = [
     url(r'^search_company', views.export_company, name="company"),
     url(r'^search_branch', views.export_branch, name="branch"),
     url(r'^search_date', views.export_date, name="date"),
-    url(r'^$', views.home, name="home"),
+    url(r'^home', views.home, name="home"),
+    url(r'^upload', views.simple_upload, name="upload"),
 ]
-

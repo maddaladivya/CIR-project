@@ -32,7 +32,7 @@
             h1.title {
             font-size: 50px;
             font-family: 'sans-serif';
-            font-weight: 400;
+            font-weight: bold;
             }
             .company{
                 position: absolute;
@@ -102,7 +102,7 @@
 	               	</div>
 	            </div>
 				<div class="main-login main-center">
-					<form class="form-horizontal" id="form" method="post" action="#">
+					<form class="form-horizontal" id="form" method="post" action="#" enctype="multipart/form-data">
 						{% csrf_token %}
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Company Name</label>
@@ -134,6 +134,16 @@
 							</div>
 						</div>
 
+            <div class="form-group">
+              <label for="file" class="cols-sm-2 control-label">File</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>
+                  <input type="file" class="form-control" name="myfile" placeholder="File"/>
+                </div>
+              </div>
+            </div>
+
 						<div class="form-group">
 							<label for="password" class="cols-sm-2 control-label">Eligibility</label>
 							<div class="cols-sm-10">
@@ -145,7 +155,7 @@
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="bt" onclick="onCheckChangeb()">BTech
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-        <li><input type="checkbox" name="b[]" value="CSE"/><label>CSE</label></li>
+        <li><input type="checkbox" name="b[]" value="Btech_CSE"/><label>Btech_CSE</label></li>
         <li><input type="checkbox" name="b[]" value="ECE"/><label>ECE</label></li>
         <li><input type="checkbox" name="b[]" value="EEE"/><label>EEE</label></li>
         <li><input type="checkbox" name="b[]" value="MECH"/><label>Mech</label></li>
@@ -162,7 +172,7 @@
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="mt" onclick="onCheckChangem()">MTech
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-        <li><input type="checkbox" name="b[]" value="CSE"/><label>CSE</label></li>
+        <li><input type="checkbox" name="b[]" value="Mtech_CSE"/><label>Mtech_CSE</label></li>
         <li><input type="checkbox" name="b[]" value="Control & Instrumentation Engineering"/><label>Control & Instrumentation Engineering</label></li>
         <li><input type="checkbox" name="b[]" value="Cyber Security Systems & Networks"/><label>Cyber Security Systems & Networks</label></li>
         <li><input type="checkbox" name="b[]" value="Power & Energy"/><label>Power & Energy</label></li>

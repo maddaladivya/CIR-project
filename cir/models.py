@@ -10,7 +10,7 @@ ELIGIBILITY_CHOICES = (
     ('MTech','MTech'),
 )
 BRANCHES = (
-    ('CSE','CSE'),
+    ('Btech_CSE','Btech_CSE'),
     ('ECE','ECE'),
     ('MECH','MECH'),
     ('EEE','EEE'),
@@ -18,7 +18,7 @@ BRANCHES = (
     ('Chem','Chem'),
     ('EIE','EIE'),
     ('AeroSpace','AeroSpace'),
-    ('CSE','CSE'),
+    ('Mtech_CSE','Mtech_CSE'),
     ('Control & Instrumentation Engineering','Control & Instrumentation Engineering'),
     ('Cyber Security Systems & Networks','Cyber Security Systems & Networks'),
     ('Power & Energy','Power & Energy'),
@@ -49,9 +49,9 @@ class Company_details(models.Model):
     comp_name = models.CharField(max_length=50)
     comp_ctc = models.IntegerField(default=0)
     comp_date = models.DateField(default=0)
+    document = models.FileField(upload_to='documents/', default='null')
     eligibility = MultiSelectField(choices=ELIGIBILITY_CHOICES)
     branch = MultiSelectField(choices=BRANCHES)
 
     def __str__(self):
         return self.comp_name
-

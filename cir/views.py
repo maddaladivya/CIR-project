@@ -6,21 +6,34 @@ import xlwt
 # Create your views here.
 
 from cir.models import Company_details
-
+from django.core.files.storage import FileSystemStorage
 
 def home(request):
     temp = 'cir/index.html'
     return render(request,temp,{})
 
 
+def simple_upload(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'cir/simple_upload.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, 'cir/simple_upload.html')
+
+
 def post_list(request):
-    if request.method == "POST":
+    if request.method == "POST"  and request.FILES['myfile']:
         cname = request.POST.get('name')
         cctc = request.POST.get('ctc')
         date = request.POST.get('date')
         e = request.POST.getlist('e[]')
         b = request.POST.getlist('b[]')
-        u = Company_details.objects.create(comp_name=cname, comp_ctc=cctc, comp_date=date,eligibility=e, branch=b)
+        myfile = request.FILES['myfile']
+        u = Company_details.objects.create(comp_name=cname, comp_ctc=cctc, comp_date=date, document=myfile, eligibility=e, branch=b)
         u.save()
         template = "cir/index.html"
         return render(request,template,{})
@@ -42,7 +55,7 @@ def export_data(request):
     font_style = xlwt.XFStyle()
     font_style.font.bold = True
 
-    columns = ['comp_name', 'comp_ctc', 'comp_date', 'eligibility', 'branch']
+    columns = ['comp_name', 'comp_ctc', 'comp_date', 'document', 'eligibility', 'branch']
 
     for col_num in range(len(columns)):
         ws.write(row_num, col_num, columns[col_num], font_style)
@@ -50,7 +63,7 @@ def export_data(request):
     # Sheet body, remaining rows
     font_style = xlwt.XFStyle()
 
-    rows = Company_details.objects.all().values_list( 'comp_name', 'comp_ctc', 'comp_date', 'eligibility', 'branch')
+    rows = Company_details.objects.all().values_list( 'comp_name', 'comp_ctc', 'comp_date', 'document' ,'eligibility', 'branch')
     print rows
     for row in rows:
         print row
