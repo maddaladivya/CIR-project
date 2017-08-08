@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'cir',
     'StudentLogin',
     'multiselectfield',
-    'StudentLogin',
 ]
 
 MIDDLEWARE = [
