@@ -7,7 +7,10 @@ from cir.models import Company_details
 from django.views.generic import ListView
 # Create your views here.
 
-
+def home(request):
+    temp = 'StudentLogin/home.html'
+    return render(request,temp,{})
+    
 
 class CompanyList(ListView):
     template_name = 'StudentLogin/display.html'

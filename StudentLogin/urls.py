@@ -8,5 +8,6 @@ from StudentLogin.views import CompanyList
 
 
 urlpatterns = [
+    url(r'^home/$', views.home, name="home"),
     url(r'^display/$', CompanyList.as_view()),
 ]
