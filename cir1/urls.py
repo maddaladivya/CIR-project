@@ -22,7 +22,7 @@ from cir1 import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^cir1/', include('cir.urls')),
-    url(r'^StudentLogin/', include('StudentLogin.urls')),
+    url(r'^student/', include('StudentLogin.urls')),
 ]
 
 
