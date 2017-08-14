@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 from django.http import HttpResponseRedirect, HttpResponse
 
 from StudentLogin.forms import UserForm
@@ -26,7 +27,7 @@ def register(request):
             user.save()
             registered = True
         if registered == True:
-            return HttpResponseRedirect('/student/display')
+            return HttpResponseRedirect('/student/login')
         else:
             return HttpResponse("Username already in use.")
     else:
@@ -43,7 +44,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/student/display')
+                return HttpResponseRedirect('/student/index')
             else:
                 return HttpResponse("Your Rango account is disabled.")
         else:
@@ -56,3 +57,8 @@ def user_login(request):
 class CompanyList(ListView):
     template_name = 'StudentLogin/display.html'
     model = Company_details
+
+
+def index(request):
+    temp = 'StudentLogin/index.html'
+    return render(request,temp,{})

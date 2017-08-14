@@ -24,7 +24,3 @@ urlpatterns = [
     url(r'^cir1/', include('cir.urls')),
     url(r'^student/', include('StudentLogin.urls')),
 ]
-
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
