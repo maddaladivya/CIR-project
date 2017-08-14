@@ -18,7 +18,7 @@
                 <div class="row">
       <h1>Account</h1>
       <div class="input-group input-group-icon">
-        <input type="text" name="username" placeholder="username"/>
+        <input type="text" name="username" placeholder="Username"/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
 
@@ -32,7 +32,7 @@
                 </form>
             </div>
     <style>
-        *,
+      *,
 *:before,
 *:after {
   box-sizing: border-box;
@@ -44,7 +44,6 @@ body {
   color: #b9b9b9;
   background-color: #e3e3e3;
 }
-
 h1 {
   color: #fed136;
 }
@@ -57,13 +56,18 @@ select {
   padding: 1em;
   line-height: 1.4;
   background-color: #f9f9f9;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #e5e5e5;
   border-radius: 3px;
   -webkit-transition: 0.35s ease-in-out;
   -moz-transition: 0.35s ease-in-out;
   -o-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
+}
+input[type="submit"]:hover
+{
+background-image:none;
+background-color:#fed136;
 }
 input:focus {
   outline: 0;
@@ -103,7 +107,7 @@ select:focus,
 select:active {
   background-color: #7ed321;
   color: #fff;
-  border-color: #fed136;
+  border-color: #64ac15;
 }
 input[type="checkbox"] {
   display: none;
@@ -153,7 +157,7 @@ select:active {
   outline: 0;
 }
 select option {
-  background-color: #fed136;
+  background-color: #7ed321;
   color: #fff;
 }
 .input-group {
@@ -206,7 +210,6 @@ select option {
   transition: all 0.35s ease-in-out;
 }
 .container {
-  position: relative;
   max-width: 38em;
   padding: 1em 3em 2em 3em;
   margin: 0em auto;
@@ -245,6 +248,9 @@ select option {
   .col-half {
     width: 100%;
     padding-right: 0;
+  }
+}
+
   }
 }
 
