@@ -243,17 +243,17 @@ select option {
     <div class="row">
       <h1>Register</h1>
       <div class="input-group input-group-icon">
-        <input type="text" class="form-control" name="username" id="username"
+        <input type="text" class="form-control" name="username" id="username" placeholder="Username"
                                                value="{{ user_form.username.value|default_if_none:"" }}">
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="text" class="form-control" name="email" id="email"
+        <input type="text" class="form-control" name="email" id="email" placeholder="EmailID"
                                                 value="{{ user_form.email.value|default_if_none:"" }}">
         <div class="input-icon"><i class="fa fa-envelope"></i></div>
       </div>
       <div class="input-group input-group-icon">
-        <input type="password" class="form-control" name="password" id="password"
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password"
                                                value="{{ user_form.password.value|default_if_none:"" }}">
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
