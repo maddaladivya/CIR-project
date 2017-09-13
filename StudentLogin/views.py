@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.http import HttpResponseRedirect, HttpResponse
-
+from django.contrib import messages
 from StudentLogin.forms import UserForm
 from cir.models import Company_details
 from django.views.generic import ListView
@@ -42,17 +42,10 @@ def user_login(request):
         password = request.POST['password']
         user = authenticate(username=username, password=password)
         if user:
-            if user.is_active:
-                login(request, user)
-                return HttpResponseRedirect('/student/index')
-            else:
-                return HttpResponse("Your account is disabled.")
+            return HttpResponseRedirect('/student/index')
         else:
-            print "Invalid login details: {0}, {1}".format(username, password)
-            return HttpResponse("Invalid login details supplied.")
+            messages.error(request, 'Invalid login credentials')
     else:
-        # No context variables to pass to the template system, hence the
-        # blank dictionary object...
         return render(request,'StudentLogin/login.html', {})
 class CompanyList(ListView):
     template_name = 'StudentLogin/display.html'

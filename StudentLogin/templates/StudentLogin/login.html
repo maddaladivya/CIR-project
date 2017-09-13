@@ -18,12 +18,12 @@
                 <div class="row">
       <h1>Account</h1>
       <div class="input-group input-group-icon">
-        <input type="text" name="username" placeholder="Username"/>
+        <input type="text" name="username" placeholder="Username" required/>
         <div class="input-icon"><i class="fa fa-user"></i></div>
       </div>
 
       <div class="input-group input-group-icon">
-        <input type="password" name="password" placeholder="Password"/>
+        <input type="password" name="password" placeholder="Password" required/>
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
     </div>
@@ -31,6 +31,12 @@
                     <input type="submit" name="submit" value="Login"/>
                 </form>
             </div>
+            {% if messages %}
+                <ul class="messages">
+                <li class="error">error</li>
+                </ul>
+            {% endif %}
+
     <style>
       *,
 *:before,
