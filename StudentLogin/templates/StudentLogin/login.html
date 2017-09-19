@@ -23,7 +23,7 @@
       </div>
 
       <div class="input-group input-group-icon">
-        <input type="password" name="password" placeholder="Password"/ required>
+        <input type="password" name="password" placeholder="Password" required/>
         <div class="input-icon"><i class="fa fa-key"></i></div>
       </div>
     </div>
@@ -31,6 +31,12 @@
                     <input type="submit" name="submit" value="Login"/>
                 </form>
             </div>
+            {% if messages %}
+                <ul class="messages">
+                <li class="error">error</li>
+                </ul>
+            {% endif %}
+
     <style>
       *,
 *:before,

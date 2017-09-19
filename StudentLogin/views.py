@@ -42,11 +42,7 @@ def user_login(request):
         password = request.POST['password']
         user = authenticate(username=username, password=password)
         if user:
-            if user.is_active:
-                login(request, user)
-                return HttpResponseRedirect('/student/index')
-            else:
-                return HttpResponse("Your account is disabled.")
+            return HttpResponseRedirect('/student/index')
         else:
             return render(request,'StudentLogin/alert.html', {})
     else:
