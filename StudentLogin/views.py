@@ -44,7 +44,7 @@ def user_login(request):
         if user:
             return HttpResponseRedirect('/student/index')
         else:
-            return render(request,'StudentLogin/alert.html', {})
+            return render(request,'StudentLogin/login.html', {})
     else:
         return render(request,'StudentLogin/login.html', {})
 class CompanyList(ListView):
