@@ -76,6 +76,7 @@ BOARD = (
 
 
 class Student_details(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     middleName = models.CharField(max_length=50)
     lastName = models.CharField(max_length=50)
@@ -126,3 +127,6 @@ class Student_details(models.Model):
     Applicable_to_PG = models.CharField(max_length=50)
     ob_profile = models.CharField(max_length=50)
     expr = models.CharField(max_length=50)
+
+def __str__(self):
+    return self.user
