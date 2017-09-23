@@ -6,10 +6,10 @@ from multiselectfield import MultiSelectField
 
 # Create your models here.
 ELIGIBILITY_CHOICES = (
-    ('Y','Eligible'),
-    ('N','Not Eligible'),
-    ('NI','Not Interested'),
-    ('NR','Not Recommended'),
+    ('Eligible','Eligible'),
+    ('Not Eligible','Not Eligible'),
+    ('Not Interested','Not Interested'),
+    ('Not Recommended','Not Recommended'),
 )
 COURSE_CHOICES = (
     ('BTech','BTech'),
@@ -56,16 +56,16 @@ STATUS = (
     ('Not Placed', 'Not Placed'),
 )
 GENDER = (
-    ('M','Male'),
-    ('F','Female')
+    ('Male','Male'),
+    ('Female','Female')
 )
 STAY_CHOICES = (
-    ('H','Hosteler'),
-    ('D','DayScholar')
+    ('Hosteler','Hosteler'),
+    ('DayScholar','DayScholar')
 )
 JOB_CHOICES = (
-    ('IT','IT sector'),
-    ('CORE','Core engg'),
+    ('IT sector','IT sector'),
+    ('Core engg','Core engg'),
     ('others','others')
 )
 BOARD = (
@@ -73,21 +73,25 @@ BOARD = (
     ('CBSE','CBSE'),
     ('ICSC','ICSC')
 )
-
+CAMPUS = (
+    ('Ettimadai','Ettimadai'),
+    ('Amritapuri','Amritapuri'),
+    ('Banglore','Banglore')
+)
 
 class Student_details(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50,)
     middleName = models.CharField(max_length=50)
     lastName = models.CharField(max_length=50)
-    eligibility = models.CharField(choices=ELIGIBILITY_CHOICES, max_length=50)
-    course = models.CharField(choices=COURSE_CHOICES, max_length=50)
-    branch = models.CharField(choices=BRANCHES, max_length=50)
+    eligibility = models.CharField(choices=ELIGIBILITY_CHOICES, max_length=50,blank=True)
+    course = models.CharField(choices=COURSE_CHOICES, max_length=50,blank=True)
+    branch = models.CharField(choices=BRANCHES, max_length=50,blank=True)
     rollno = models.CharField(max_length=50)
     massOffer = models.IntegerField(default=0)
     PlacementStatus = models.CharField(choices=STATUS,max_length=50)
     PlacementStatusFinal = models.BooleanField(default=True)
-    campus = models.CharField(max_length=50)
+    campus = models.CharField(choices=CAMPUS, max_length=50)
     gender = models.CharField(choices=GENDER, max_length=50)
     DOB = models.DateField()
     tenth_percentage = models.IntegerField(default=0)
@@ -100,14 +104,14 @@ class Student_details(models.Model):
     s5 = models.IntegerField(default=0)
     s6 = models.IntegerField(default=0)
     CGPA = models.IntegerField(default=0)
-    no_of_current_Arrears = models.IntegerField()
-    no_of_history_Arrears = models.IntegerField()
-    stay = models.CharField(choices=STAY_CHOICES, max_length=50)
+    no_of_current_Arrears = models.IntegerField(default=0)
+    no_of_history_Arrears = models.IntegerField(default=0)
+    stay = models.CharField(choices=STAY_CHOICES, max_length=50,blank=True)
     Internship_details = models.TextField()
-    job_Interest = models.CharField(choices=JOB_CHOICES, max_length=50)
-    tenth_board = models.CharField(choices=BOARD, max_length=50)
+    job_Interest = models.CharField(choices=JOB_CHOICES, max_length=50,blank=True)
+    tenth_board = models.CharField(choices=BOARD, max_length=50,blank=True)
     tenth_year_of_passing = models.IntegerField()
-    twelth_board = models.CharField(choices=BOARD, max_length=50)
+    twelth_board = models.CharField(choices=BOARD, max_length=50,blank=True)
     twelth_year_of_passing = models.IntegerField()
     gap_in_studies_with_reason = models.TextField()
     permanent_address = models.TextField()
@@ -116,7 +120,6 @@ class Student_details(models.Model):
     country = models.CharField(max_length=20)
     pin = models.IntegerField()
     contact = models.IntegerField()
-    email_id = models.EmailField()
     UG_marks = models.IntegerField()
     UG_aggr = models.IntegerField()
     course_PG = models.CharField(max_length=50)
