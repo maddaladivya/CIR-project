@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 
-
+from django.contrib.auth import views as auth_views
 from StudentLogin import views
 from cir1 import settings
 from django.contrib.auth import views as auth_views

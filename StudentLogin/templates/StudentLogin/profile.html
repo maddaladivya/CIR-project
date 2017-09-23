@@ -23,6 +23,14 @@
 	$('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
 	 } );
 	 </script>
+   <style>
+        .bthide{
+            display: none;
+        }
+        .mthide{
+            dispaly: none;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -34,12 +42,13 @@
 <legend>Contact Us Today!</legend>
 
 <!-- Text input-->
+
 <div class="form-group">
   <label class="col-md-4 control-label">First Name</label>
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="name" placeholder="First Name" class="form-control"  type="text">
+  <input  name="name" placeholder="First Name" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -48,7 +57,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="middleName" placeholder="Last Name" class="form-control"  type="text">
+  <input name="middleName" placeholder="Last Name" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -77,82 +86,86 @@
 </div>
 </div>
 <div class="form-group">
-											 <label class="col-md-4 control-label">Course you enrolled in</label>
-											 <div class="col-md-4">
-													 <div class="radio">
-															 <label>
-																	 <input type="radio" name="course" value="BTech" /> Btech
-															 </label>
-													 </div>
-													 <div class="radio">
-															 <label>
-																	 <input type="radio" name="course" value="MTech" /> Mtech
-															 </label>
-													 </div>
-											 </div>
-									 </div>
-
-									 <div class="form-group">
-									   <label class="col-md-4 control-label">State</label>
-									     <div class="col-md-4 selectContainer">
-									     <div class="input-group">
-									         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-									     <select name="branch" class="form-control selectpicker" >
-									       <option value=" " >Select the branch</option>
-									       <option>Btech_CSE</option>
-									       <option>ECE</option>
-									       <option >MECH</option>
-									       <option >EEE</option>
-									       <option >Civil</option>
-									       <option >Chem</option>
-									       <option >EIE</option>
-									       <option >AeroSpace</option>
-									     </select>
-									   </div>
-									 </div>
-									 </div>
-<div class="form-group">
+    <label class="col-md-4 control-label">Course you enrolled in</label>
+    <div class="col-md-4">
+        <div class="radio">
+            <label>
+                <input type="radio" id="btech" onclick="show1()" name="course" value="BTech" /> Btech
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" id="mtech" onclick="show2()" name="course" value="MTech" /> Mtech													 </label>
+        </div>
+    </div>
+</div>
+<div class="bthide">
+<div class="form-group" id="bt">
   <label class="col-md-4 control-label">Branch</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="branch" class="form-control selectpicker" >
-      <option value=" " >Please select your Branch</option>
+    <select name="branchbt" class="form-control selectpicker" >
+      <option value=" " >Select the branch</option>
+      <option>Btech_CSE</option>
+      <option>ECE</option>
+      <option>MECH</option>
+      <option>EEE</option>
+      <option>Civil</option>
+      <option>Chem</option>
+      <option>EIE</option>
+      <option>AeroSpace</option>
+    </select>
+  </div>
+</div>
+</div>
+</div>
+<!-- Text input-->
+<div class="mthide">
+<div class="form-group" id="mt">
+  <label class="col-md-4 control-label">Branch</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="branchmt" class="form-control selectpicker" >
+        <option value=" " >Select the branch</option>
       <option>Mtech_CSE</option>
       <option>Control & Instrumentation Engineering</option>
-      <option >Cyber Security Systems & Networks</option>
-      <option >Power & Energy</option>
-      <option >Robotics & Automation</option>
-      <option >Thermal & Fluids</option>
-      <option >VLSI Design</option>
-      <option >Wireless Networks & Applications</option>
-      <option >Communication Engineering & Signal Processing</option>
+      <option>Cyber Security Systems & Networks</option>
+      <option>Power & Energy</option>
+      <option>Robotics & Automation</option>
+      <option>Thermal & Fluids</option>
+      <option>VLSI Design</option>
+      <option>Wireless Networks & Applications</option>
+      <option>Communication Engineering & Signal Processing</option>
       <option>Computer Science & Engineering - Data Science</option>
-      <option >Embedded Systems</option>
-      <option >Power Electronics</option>
-      <option >Thermal Science & Energy Systems</option>
-      <option >Automotive Engineering</option>
-      <option >Biomedical Engineering</option>
-      <option >Communication Engineering & Signal Processing</option>
+      <option>Embedded Systems</option>
+      <option>Power Electronics</option>
+      <option>Thermal Science & Energy Systems</option>
+      <option>Automotive Engineering</option>
+      <option>Biomedical Engineering</option>
+      <option>Communication Engineering & Signal Processing</option>
       <option>Computational Engineering & Networking</option>
-      <option >Control & Instrumentation Engineering</option>
-      <option >Cyber Security</option>
+      <option>Control & Instrumentation Engineering</option>
+      <option>Cyber Security</option>
       <option>Engineering Design</option>
-      <option >Manufacturing Engineering</option>
+      <option>Manufacturing Engineering</option>
       <option>Material Science</option>
-      <option >Remote Sensing & Wireless Sensor Networks</option>
-      <option >Renewable Energy Technologies</option>
+      <option>Remote Sensing & Wireless Sensor Networks</option>
+      <option>Renewable Energy Technologies</option>
       <option>Structural & Construction Engineering</option>
     </select>
   </div>
 </div>
 </div>
+</div>
+
        <div class="form-group">
   <label class="col-md-4 control-label">RollNumber</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="rollno" placeholder="RollNumber" class="form-control"  type="text">
+  <input name="rollno" placeholder="RollNumber" class="form-control" value="23"  type="text">
     </div>
   </div>
 </div>
@@ -161,7 +174,7 @@
 <div class="col-md-4 inputGroupContainer">
 <div class="input-group">
  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-<input name="massOffer" placeholder="Mass Offer" class="form-control"  type="text">
+<input name="massOffer" placeholder="Mass Offer" class="form-control" value="99" type="text">
 </div>
 </div>
 </div>
@@ -179,35 +192,36 @@
   </div>
 </div>
 </div>
+<!-- Text input-->
 <div class="form-group">
-											 <label class="col-md-4 control-label">Placement Status Final</label>
-											 <div class="col-md-4">
-													 <div class="radio">
-															 <label>
-																	 <input type="radio" name="PlacementStatusFinal" value="True" /> Yes
-															 </label>
-													 </div>
-													 <div class="radio">
-															 <label>
-																	 <input type="radio" name="course" value="False" /> No
-															 </label>
-													 </div>
-											 </div>
-									 </div>
-									 <div class="form-group">
-									   <label class="col-md-4 control-label">Campus</label>
-									     <div class="col-md-4 selectContainer">
-									     <div class="input-group">
-									         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-									     <select name="campus" class="form-control selectpicker" >
-									       <option value=" " >select</option>
-									       <option>Ettimadai</option>
-									       <option>Amritapuri</option>
-									       <option >Banglore</option>
-									     </select>
-									   </div>
-									 </div>
-									 </div>
+    <label class="col-md-4 control-label">Placement Status Final</label>
+    <div class="col-md-4">
+        <div class="radio">
+            <label>
+                <input type="radio" name="PlacementStatusFinal" value="True" /> Yes
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="course" value="False" /> No
+            </label>
+        </div>
+    </div>
+ </div>
+ <div class="form-group">
+   <label class="col-md-4 control-label">Campus</label>
+     <div class="col-md-4 selectContainer">
+     <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+     <select name="campus" class="form-control selectpicker" >
+       <option value=" " >select</option>
+       <option>Ettimadai</option>
+       <option>Amritapuri</option>
+       <option >Banglore</option>
+     </select>
+   </div>
+ </div>
+ </div>
 
 <div class="form-group">
 	<label class="col-md-4 control-label">Gender</label>
@@ -231,12 +245,13 @@
     </div>
   </div>
 </div>
+<!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label">10 class percentage</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="tenth_percentage" placeholder="Marks" class="form-control" type="text">
+  <input name="tenth_percentage" placeholder="Marks" value="23" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -245,7 +260,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="twelth_percentage" placeholder="Address" class="form-control" type="text">
+  <input name="twelth_percentage" placeholder="Address" value="44" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -267,7 +282,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        	<textarea class="form-control" name="Internship_details" placeholder="Description"></textarea>
+        	<textarea class="form-control" value="Placed " name="Internship_details" placeholder="Description"></textarea>
   </div>
   </div>
 </div>
@@ -304,7 +319,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        	<input name="tenth_year_of_passing" placeholder="Year" class="form-control"  type="text">
+        	<input name="tenth_year_of_passing" placeholder="Year" class="form-control"  type="">
   </div>
   </div>
 </div>
@@ -350,7 +365,7 @@
   </div>
 </div>
 
-
+<!-- Text input-->
 
 <div class="form-group">
   <label class="col-md-4 control-label">District</label>
@@ -362,7 +377,7 @@
   </div>
 </div>
 
-
+<!-- Select Basic -->
 <div class="form-group">
   <label class="col-md-4 control-label">State</label>
     <div class="col-md-4 inputGroupContainer">
@@ -393,7 +408,7 @@
 </div>
 </div>
 
-
+<!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label">Phone Number</label>
    <div class="col-md-4 inputGroupContainer">
@@ -505,5 +520,6 @@
 </fieldset>
 </form>
 </div>
+    </div><!-- /.container -->
 </body>
 </html>

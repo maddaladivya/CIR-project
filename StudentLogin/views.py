@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
@@ -8,6 +9,7 @@ from django.contrib.auth import logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from StudentLogin.forms import UserForm
+from StudentLogin.models import Student_details
 from cir.models import Company_details
 from StudentLogin.models import Student_details
 from django.views.generic import ListView, DetailView
@@ -23,7 +25,8 @@ def register(request):
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
         if user_form.is_valid():
-            user = user_form.save()
+            user = user_form.save(commit=False)
+            user.user = request.user
             user.set_password(user.password)
             user.save()
             registered = True
@@ -43,7 +46,16 @@ def info(request,pk):
         lastname = request.POST.get('lastName')
         eligibility = request.POST.get('eligibility')
         course = request.POST.get('course')
-        branch = request.POST.get('branch')
+        branchbt = request.POST.get('branchbt')
+        branchmt = request.POST.get('branchmt')
+        print branchbt
+        print branchmt
+        if branchbt == " ":
+            branch = branchmt
+        elif branchmt == " ":
+            branch = branchbt
+        else:
+            branch = " "
         rollno = request.POST.get('rollno')
         massoffer = request.POST.get('massOffer')
         placestatus = request.POST.get('PlacementStatus')
@@ -53,6 +65,7 @@ def info(request,pk):
         dateofbirth = request.POST.get('DOB')
         tenthper = request.POST.get('tenth_percentage')
         twelthper = request.POST.get('twelth_percentage')
+        stay = request.POST.get('stay')
         Interndetails = request.POST.get('Internship_details')
         jobInterest = request.POST.get('job_Interest')
         tenthboard = request.POST.get('tenth_board')
@@ -76,11 +89,11 @@ def info(request,pk):
         ApptoPG= request.POST.get('Applicable_to_PG')
         obprofile = request.POST.get('ob_profile')
         expr = request.POST.get('expr')
-        u = Student_details.objects.create(user=username, name=name, middleName=middlename, lastName=lastname, eligibility=eligibility,
+        u = Student_details.objects.create(user=user,name=name, middleName=middlename, lastName=lastname, eligibility=eligibility,
                                            course=course, branch=branch, rollno=rollno, massOffer= massoffer,
                                            PlacementStatus=placestatus, PlacementStatusFinal= placestatusf,
                                            campus=campus, gender=gender, DOB=dateofbirth, tenth_percentage=tenthper,
-                                           twelth_percentage=twelthper, Internship_details=Interndetails,
+                                           twelth_percentage=twelthper,stay=stay, Internship_details=Interndetails,
                                            job_Interest= jobInterest, tenth_board= tenthboard,tenth_year_of_passing=tenthyearofpass,
                                            twelth_board= twelthboard, twelth_year_of_passing=twelthyearofpass,
                                            gap_in_studies_with_reason=gapreason, permanent_address=address, district=district,
