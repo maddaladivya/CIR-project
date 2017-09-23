@@ -58,8 +58,6 @@ def profile(request,ak):
             branch = " "
         rollno = request.POST.get('rollno')
         massoffer = request.POST.get('massOffer')
-        placestatus = request.POST.get('PlacementStatus')
-        placestatusf = request.POST.get('PlacementStatusFinal')
         campus = request.POST.get('campus')
         gender = request.POST.get('gender')
         dateofbirth = request.POST.get('DOB')
@@ -91,7 +89,6 @@ def profile(request,ak):
         expr = request.POST.get('expr')
         u = Student_details.objects.create(user=user,name=name, middleName=middlename, lastName=lastname, eligibility=eligibility,
                                            course=course, branch=branch, rollno=rollno, massOffer= massoffer,
-                                           PlacementStatus=placestatus, PlacementStatusFinal= placestatusf,
                                            campus=campus, gender=gender, DOB=dateofbirth, tenth_percentage=tenthper,
                                            twelth_percentage=twelthper,stay=stay, Internship_details=Interndetails,
                                            job_Interest= jobInterest, tenth_board= tenthboard,tenth_year_of_passing=tenthyearofpass,
@@ -117,3 +114,27 @@ def index(request):
     temp = 'StudentLogin/index.html'
     return render(request,temp,{})
 
+def edit(request,ak):
+    if request.method == 'POST':
+        u = User.objects.get(id=ak)
+        u.name = request.POST.get('name')
+        u.middleName = request.POST.get('middleName')
+        u.lastName = request.POST.get('lastName')
+        u.massOffer = request.POST.get('massOffer')
+        u.DOB = request.POST.get('DOB')
+        u.tenth_percentage = request.POST.get('tenth_percentage')
+        u.twelth_percentage = request.POST.get('twelth_percentage')
+        u.Internship_details = request.POST.get('Internship_details')
+        u.tenth_board = request.POST.get('tenth_board')
+        u.twelth_board = request.POST.get('twelth_board')
+        u.address = request.POST.get('address')
+        u.district = request.POST.get('district')
+        u.state = request.POST.get('state')
+        u.country = request.POST.get('country')
+        u.pin = request.POST.get('pin')
+        u.contact = request.POST.get('contact')
+        u.save()
+        return HttpResponseRedirect('/student/index')
+    return render(request,
+            'StudentLogin/edit.html',
+            {})
