@@ -58,8 +58,6 @@ def info(request,pk):
             branch = " "
         rollno = request.POST.get('rollno')
         massoffer = request.POST.get('massOffer')
-        placestatus = request.POST.get('PlacementStatus')
-        placestatusf = request.POST.get('PlacementStatusFinal')
         campus = request.POST.get('campus')
         gender = request.POST.get('gender')
         dateofbirth = request.POST.get('DOB')
@@ -89,9 +87,8 @@ def info(request,pk):
         ApptoPG= request.POST.get('Applicable_to_PG')
         obprofile = request.POST.get('ob_profile')
         expr = request.POST.get('expr')
-        u = Student_details.objects.create(user=user,name=name, middleName=middlename, lastName=lastname, eligibility=eligibility,
+        u = Student_details.objects.create(user=username,name=name, middleName=middlename, lastName=lastname, eligibility=eligibility,
                                            course=course, branch=branch, rollno=rollno, massOffer= massoffer,
-                                           PlacementStatus=placestatus, PlacementStatusFinal= placestatusf,
                                            campus=campus, gender=gender, DOB=dateofbirth, tenth_percentage=tenthper,
                                            twelth_percentage=twelthper,stay=stay, Internship_details=Interndetails,
                                            job_Interest= jobInterest, tenth_board= tenthboard,tenth_year_of_passing=tenthyearofpass,
