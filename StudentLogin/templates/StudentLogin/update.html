@@ -1,0 +1,139 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="/static/StudentLogin/css/update.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Student Profile</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class=" col-md-12 col-lg-12 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        {% if user_info.name %}
+                        <td>Name:</td>
+                        <td>{{user_info.name}} {{ user_info.middleName }} {{ user_info.lastName }}</td>
+                        {% endif %}
+                      </tr>
+                      <tr>
+                      <td>Rollno</td>
+                      <td>{{ user_info.rollno }}</td>
+                    </tr>
+
+                      <tr>
+                        <td>Date of Birth</td>
+                        <td>{{ user_info.DOB }}</td>
+                      </tr>
+                     <tr>
+                        <td>Gender</td>
+                        <td>{{ user_info.gender }}</td>
+                      </tr>
+                      <tr>
+                      <td>Campus</td>
+                      <td>{{ user_info.campus }}</td>
+                    </tr>
+                        <tr>
+                        <td>Course</td>
+                        <td>{{ user_info.course }}</td>
+                      </tr>
+                      <tr>
+                        <td>Eligibility:</td>
+                        <td>{{ user_info.eligibility }}</td>
+                      </tr>
+                      <tr>
+                      <td>Home Address</td>
+                      <td>{{ user_info.permanent_address }}, {{ user_info.district }}<br> {{ user_info.state }}, {{ user_info.country }}<br>
+                        {{ user_info.pin }}
+                      </td>
+                    </tr>
+                    <tr>
+                    <td>Contact</td>
+                    <td>{{ user_info.contact }}</td>
+                  </tr>
+                  <tr>
+                  <td>Email Id</td>
+                  <td>{{ request.user.email }}</td>
+                </tr>
+                <tr>
+                <td>Stay</td>
+                <td>{{ user_info.stay }}</td>
+              </tr>
+                <tr>
+                <td>Grades</td>
+                <td>Twelth: {{ user_info.twelth_percentage }}<br>
+                  tenth: {{ user_info.tenth_percentage }}<br>
+                  s1: {{ user_info.s1 }}<br>
+                  s2: {{ user_info.s2 }}<br>
+                  s3: {{ user_info.s3 }}<br>
+                  s4: {{ user_info.s4 }}<br>
+                  s5: {{ user_info.s5 }}<br>
+                  s6: {{ user_info.s6 }}<br>
+                  CGPA: {{ user_info.CGPA }}<br>
+                  No.of current arrears: {{ user_info.no_of_current_Arrears }}<br>
+                  No.of history arrears: {{ user_info.no_of_history_Arrears }} <br>
+                </td>
+              </tr>
+              <tr>
+              <td>Interndetails</td>
+              <td>{{ user_info.Internship_details }}</td>
+            </tr>
+            <tr>
+            <td>Job interest</td>
+            <td>{{ user_info.job_Interest }}</td>
+          </tr>
+          <tr>
+          <td>Mass Offer</td>
+          <td>{{ user_info.massOffer }}</td>
+        </tr>
+        <tr>
+        <td>Placestatus</td>
+        <td>{{ user_info.placestatus }}</td>
+      </tr>
+      <tr>
+      <td>Placement Final status</td>
+      <td>{{ user_info.PlacementStatusFinal }}</td>
+    </tr>
+          <tr>
+          <td>Secondary Education</td>
+          <td>
+            tenth board: {{ user_info.tenth_board }}<br>
+            tenth year of passing: {{ user_info.tenth_year_of_passing }}<br>
+            twelth board: {{ user_info.twelth_board }}<br>
+            twelth year of passing: {{ user_info.twelth_year_of_passing }}<br>
+          </td>
+        </tr>
+        <tr>
+        <td>Gap in studies(if any)? with reason</td>
+        <td>{{ user_info.gap_in_studies_with_reason }}</td>
+      </tr>
+                    </tbody>
+                  </table>
+
+                  <a href="#" class="btn btn-primary">Edit</a>
+                </div>
+              </div>
+            </div>
+                 <div class="panel-footer">
+
+                    </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/StudentLogin/js/update.js"></script>
+</body>
+</html>

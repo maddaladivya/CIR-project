@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+			<script>
+	$( function() {
+	$('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+	 } );
+	 </script>
+</head>
+<body>
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
+{% csrf_token %}
+<!-- Form Name -->
+<legend>Contact Us Today!</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="name" placeholder="First Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" >Middle Name</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="middleName" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="lastName" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Eligibility</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="eligibility" class="form-control selectpicker" >
+      <option value=" " >Please select your interest</option>
+      <option>Eligible</option>
+      <option>Not Eligible</option>
+      <option >Not Interested</option>
+      <option >Not Recommended</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="form-group">
+											 <label class="col-md-4 control-label">Course you enrolled in</label>
+											 <div class="col-md-4">
+													 <div class="radio">
+															 <label>
+																	 <input type="radio" name="course" value="BTech" /> Btech
+															 </label>
+													 </div>
+													 <div class="radio">
+															 <label>
+																	 <input type="radio" name="course" value="MTech" /> Mtech
+															 </label>
+													 </div>
+											 </div>
+									 </div>
+
+									 <div class="form-group">
+									   <label class="col-md-4 control-label">State</label>
+									     <div class="col-md-4 selectContainer">
+									     <div class="input-group">
+									         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+									     <select name="branch" class="form-control selectpicker" >
+									       <option value=" " >Select the branch</option>
+									       <option>Btech_CSE</option>
+									       <option>ECE</option>
+									       <option >MECH</option>
+									       <option >EEE</option>
+									       <option >Civil</option>
+									       <option >Chem</option>
+									       <option >EIE</option>
+									       <option >AeroSpace</option>
+									     </select>
+									   </div>
+									 </div>
+									 </div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Branch</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="branch" class="form-control selectpicker" >
+      <option value=" " >Please select your Branch</option>
+      <option>Mtech_CSE</option>
+      <option>Control & Instrumentation Engineering</option>
+      <option >Cyber Security Systems & Networks</option>
+      <option >Power & Energy</option>
+      <option >Robotics & Automation</option>
+      <option >Thermal & Fluids</option>
+      <option >VLSI Design</option>
+      <option >Wireless Networks & Applications</option>
+      <option >Communication Engineering & Signal Processing</option>
+      <option>Computer Science & Engineering - Data Science</option>
+      <option >Embedded Systems</option>
+      <option >Power Electronics</option>
+      <option >Thermal Science & Energy Systems</option>
+      <option >Automotive Engineering</option>
+      <option >Biomedical Engineering</option>
+      <option >Communication Engineering & Signal Processing</option>
+      <option>Computational Engineering & Networking</option>
+      <option >Control & Instrumentation Engineering</option>
+      <option >Cyber Security</option>
+      <option>Engineering Design</option>
+      <option >Manufacturing Engineering</option>
+      <option>Material Science</option>
+      <option >Remote Sensing & Wireless Sensor Networks</option>
+      <option >Renewable Energy Technologies</option>
+      <option>Structural & Construction Engineering</option>
+    </select>
+  </div>
+</div>
+</div>
+       <div class="form-group">
+  <label class="col-md-4 control-label">RollNumber</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="rollno" placeholder="RollNumber" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">Mass Offer</label>
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+ <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input name="massOffer" placeholder="Mass Offer" class="form-control"  type="text">
+</div>
+</div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Placement Status</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="PlacementStatus" class="form-control selectpicker" >
+      <option value=" " >Please select your interest</option>
+      <option>Applied</option>
+      <option>Placed</option>
+      <option >Not Placed</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="form-group">
+											 <label class="col-md-4 control-label">Placement Status Final</label>
+											 <div class="col-md-4">
+													 <div class="radio">
+															 <label>
+																	 <input type="radio" name="PlacementStatusFinal" value="True" /> Yes
+															 </label>
+													 </div>
+													 <div class="radio">
+															 <label>
+																	 <input type="radio" name="course" value="False" /> No
+															 </label>
+													 </div>
+											 </div>
+									 </div>
+									 <div class="form-group">
+									   <label class="col-md-4 control-label">Campus</label>
+									     <div class="col-md-4 selectContainer">
+									     <div class="input-group">
+									         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+									     <select name="campus" class="form-control selectpicker" >
+									       <option value=" " >select</option>
+									       <option>Ettimadai</option>
+									       <option>Amritapuri</option>
+									       <option >Banglore</option>
+									     </select>
+									   </div>
+									 </div>
+									 </div>
+
+<div class="form-group">
+	<label class="col-md-4 control-label">Gender</label>
+		<div class="col-md-4 selectContainer">
+		<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+		<select name="gender" class="form-control selectpicker" >
+			<option value=" " >select</option>
+			<option>Male</option>
+			<option>Female</option>
+		</select>
+	</div>
+</div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Date</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input type="text" class="w3-input w3-border" name="DOB" id="datepicker" placeholder="Date"/>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">10 class percentage</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="tenth_percentage" placeholder="Marks" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">12 class percentage</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="twelth_percentage" placeholder="Address" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+	<label class="col-md-4 control-label">Stay</label>
+		<div class="col-md-4 selectContainer">
+		<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+		<select name="stay" class="form-control selectpicker" >
+			<option value=" " >select</option>
+			<option>Hosteler</option>
+			<option>DayScholar</option>
+		</select>
+	</div>
+</div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Internship Details</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        	<textarea class="form-control" name="Internship_details" placeholder="Description"></textarea>
+  </div>
+  </div>
+</div>
+<div class="form-group">
+	<label class="col-md-4 control-label">Job Interests</label>
+		<div class="col-md-4 selectContainer">
+		<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+		<select name="job_Interest" class="form-control selectpicker" >
+			<option value=" " >select</option>
+			<option>IT sector</option>
+			<option>Core engg</option>
+			<option>others</option>
+		</select>
+	</div>
+</div>
+</div>
+<div class="form-group">
+	<label class="col-md-4 control-label">10 BOARD</label>
+		<div class="col-md-4 selectContainer">
+		<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+		<select name="tenth_board" class="form-control selectpicker" >
+			<option value=" " >select</option>
+			<option>state</option>
+			<option>CBSE</option>
+			<option>ICSC</option>
+		</select>
+	</div>
+</div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">10 year of passing</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        	<input name="tenth_year_of_passing" placeholder="Year" class="form-control"  type="text">
+  </div>
+  </div>
+</div>
+<div class="form-group">
+	<label class="col-md-4 control-label">12 BOARD</label>
+		<div class="col-md-4 selectContainer">
+		<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+		<select name="twelth_board" class="form-control selectpicker" >
+			<option value=" " >select</option>
+			<option>state</option>
+			<option>CBSE</option>
+			<option>ICSC</option>
+		</select>
+	</div>
+</div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">12 year of passing</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        	<input name="twelth_year_of_passing" placeholder="Year" class="form-control"  type="text">
+  </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Reason for gap in studies</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        	<textarea class="form-control" name="gap_in_studies_with_reason" placeholder="Reason"></textarea>
+  </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Address</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="address" placeholder="Address" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label">District</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="district" placeholder="District" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label">State</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="state" placeholder="State" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Country</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="country" placeholder="Country" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Pin Code</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="pin" placeholder="Pin Code" class="form-control"  type="text">
+    </div>
+</div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Phone Number</label>
+   <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+  <input name="contact" placeholder="PhoneNumber" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">UG Marks</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="UG_marks" placeholder="UG Marks" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">UG Aggregation</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="UG_aggr" placeholder="UGAggregation" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Course PG</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="course_PG" placeholder="CoursePG" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">UG Specialization</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="UG_specialiazation" placeholder="Specialization" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">UG College</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="UG_college" placeholder="Name of the college" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">UG Year of Passing</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="UG_year_of_passing" placeholder="Year" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Gate Score</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="gate_score" placeholder="Score" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Applicable to PG</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="Applicable_to_PG" placeholder="" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Expr</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="expr" placeholder="EXPR" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">OB Profile</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="ob_profile" placeholder="Profile" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+</body>
+</html>
