@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cir',
     'multiselectfield',
-    'StudentLogin'
+    'StudentLogin',
+    'faculty',
 ]
 
 MIDDLEWARE = [
@@ -125,5 +126,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = '/student/index/'
+LOGOUT_REDIRECT_URL = '/student/home/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

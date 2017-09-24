@@ -1,0 +1,179 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="/static/StudentLogin/css/update.css" rel="stylesheet">
+</head>
+<body style="background-color: 	#DCDCDC">
+  <!DOCTYPE html>
+  <html>
+  <head>
+  	<title>Register</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+  		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+      	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+  			<script>
+  	$( function() {
+  	$('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+  	 } );
+  	 </script>
+     <style>
+          .bthide{
+              display: none;
+          }
+          .mthide{
+              dispaly: none;
+          }
+      </style>
+  </head>
+  <body>
+  <div class="container">
+
+      <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+  <fieldset>
+  {% csrf_token %}
+  <!-- Form Name -->
+  <legend>Upload</legend>
+
+  <!-- Text input-->
+
+    <div class="form-group">
+    <label class="col-md-4 control-label">s1</label>
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+    <input name="s1" placeholder="s1 marks" class="form-control" type="text" value={{a.s1}}>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+  <label class="col-md-4 control-label">s2</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="s2" placeholder="s2 marks" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">s3</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input name="s3" placeholder="s3 marks" class="form-control" type="text">
+  </div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">s4</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input name="s4" placeholder="s4 marks" class="form-control" type="text">
+  </div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">s5</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input name="s5" placeholder="s5 marks" class="form-control" type="text">
+  </div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">s6</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input name="s6" placeholder="s6 marks" class="form-control" type="text">
+  </div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">CGPA</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input name="CGPA" placeholder="CGPA" class="form-control" type="text">
+  </div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">No.of current arrears</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input name="carrears" placeholder="carrears" class="form-control" type="text">
+  </div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">No.of history arrears</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input name="harrears" placeholder="harrears" class="form-control" type="text">
+  </div>
+</div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">Placement Status</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="placementstatus" class="form-control selectpicker" >
+      <option value=" " >Please select your interest</option>
+      <option>Applied</option>
+      <option>Placed</option>
+      <option >Not Placed</option>
+    </select>
+  </div>
+</div>
+</div>
+  <!-- Text input-->
+  <div class="form-group">
+      <label class="col-md-4 control-label">Placement Status Final</label>
+      <div class="col-md-4">
+          <div class="radio">
+              <label>
+                  <input type="radio" name="placementstatusfinal" value="True" /> Yes
+              </label>
+          </div>
+          <div class="radio">
+              <label>
+                  <input type="radio" name="course" value="False" /> No
+              </label>
+          </div>
+      </div>
+   </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label"></label>
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+    </div>
+  </div>
+
+  </fieldset>
+  </form>
+  </div>
+      </div><!-- /.container -->
+  </body>
+  </html>

@@ -9,7 +9,6 @@ from django.contrib.auth import logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from StudentLogin.forms import UserForm
-from StudentLogin.models import Student_details
 from cir.models import Company_details
 from StudentLogin.models import Student_details
 from django.views.generic import ListView, DetailView
