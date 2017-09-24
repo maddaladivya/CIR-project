@@ -119,3 +119,26 @@ class ProfileDetailView(DetailView):
 def index(request):
     temp = 'StudentLogin/index.html'
     return render(request,temp,{})
+
+
+def edit(request,ak):
+    a = Student_details.objects.get(id=ak)
+    if request.method == 'POST':
+        u = Student_details.objects.get(id=ak)
+        u.name = request.POST.get('name')
+        u.middleName = request.POST.get('middleName')
+        u.lastName = request.POST.get('lastName')
+        u.massOffer = request.POST.get('massOffer')
+        u.DOB = request.POST.get('DOB')
+        u.tenth_percentage = request.POST.get('tenth_percentage')
+        u.twelth_percentage = request.POST.get('twelth_percentage')
+        u.Internship_details = request.POST.get('Internship_details')
+        u.address = request.POST.get('address')
+        u.district = request.POST.get('district')
+        u.state = request.POST.get('state')
+        u.country = request.POST.get('country')
+        u.pin = request.POST.get('pin')
+        u.contact = request.POST.get('contact')
+        u.save()
+        return HttpResponseRedirect('/student/index')
+    return render(request,'StudentLogin/edit.html',{'a':a})

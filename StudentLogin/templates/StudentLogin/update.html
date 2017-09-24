@@ -22,10 +22,10 @@
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        {% if user_info.name %}
+
                         <td>Name:</td>
                         <td>{{user_info.name}} {{ user_info.middleName }} {{ user_info.lastName }}</td>
-                        {% endif %}
+
                       </tr>
                       <tr>
                       <td>Rollno</td>
@@ -120,8 +120,9 @@
       </tr>
                     </tbody>
                   </table>
+                {% if request.user.is_authenticated %}<a href="{% url 'edit' user_info.id %}">Edit</a>
+                      {% else %}<a href="{% url 'login' %}"  class="btn btn-primary">login</a>{% endif %}
 
-                  <a href="#" class="btn btn-primary">Edit</a>
                 </div>
               </div>
             </div>

@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/$', ProfileDetailView.as_view(), name="profile"),
     url(r'^password_reset/$', auth_views.password_reset, name='password_reset'),
     url(r'^logout/$', auth_views.logout, name="logout"),
+    url(r'^edit/(?P<ak>[0-9]+)/$', views.edit, name="edit")
 ]
