@@ -123,4 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
 LOGIN_REDIRECT_URL = '/student/index/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

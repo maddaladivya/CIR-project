@@ -80,8 +80,8 @@ CAMPUS = (
 )
 
 class Student_details(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50,)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
+    name = models.CharField(max_length=50)
     middleName = models.CharField(max_length=50)
     lastName = models.CharField(max_length=50)
     eligibility = models.CharField(choices=ELIGIBILITY_CHOICES, max_length=50,blank=True)

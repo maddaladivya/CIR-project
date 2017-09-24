@@ -11,7 +11,9 @@ from django.contrib import messages
 from StudentLogin.forms import UserForm
 from StudentLogin.models import Student_details
 from cir.models import Company_details
-from django.views.generic import ListView
+from StudentLogin.models import Student_details
+from django.views.generic import ListView, DetailView
+from django.contrib.auth.models import User
 # Create your views here.
 
 def home(request):
@@ -20,7 +22,6 @@ def home(request):
 
 
 def register(request):
-    registered = False
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
         if user_form.is_valid():
@@ -29,18 +30,17 @@ def register(request):
             user.set_password(user.password)
             user.save()
             registered = True
-        if registered == True:
-            return HttpResponseRedirect('/student/profile/%d/'%user.id)
-        else:
-            return HttpResponse("Username already in use.")
+            if registered == True:
+                return HttpResponseRedirect('/student/info/%d'%user.id)
+            else:
+                return HttpResponse("Username already in use.")
     else:
         user_form = UserForm()
-    return render(request,
-            'StudentLogin/register.html',
-            {'user_form': user_form,'registered': registered})
-def profile(request,ak):
+    return render(request,'StudentLogin/register.html',{})
+
+def info(request,pk):
     if request.method == 'POST':
-        user = User.objects.get(id=ak)
+        username = User.objects.get(id=pk)
         name = request.POST.get('name')
         middlename = request.POST.get('middleName')
         lastname = request.POST.get('lastName')
@@ -87,7 +87,7 @@ def profile(request,ak):
         ApptoPG= request.POST.get('Applicable_to_PG')
         obprofile = request.POST.get('ob_profile')
         expr = request.POST.get('expr')
-        u = Student_details.objects.create(user=user,name=name, middleName=middlename, lastName=lastname, eligibility=eligibility,
+        u = Student_details.objects.create(user=username,name=name, middleName=middlename, lastName=lastname, eligibility=eligibility,
                                            course=course, branch=branch, rollno=rollno, massOffer= massoffer,
                                            campus=campus, gender=gender, DOB=dateofbirth, tenth_percentage=tenthper,
                                            twelth_percentage=twelthper,stay=stay, Internship_details=Interndetails,
@@ -98,25 +98,34 @@ def profile(request,ak):
                                            UG_aggr=UGaggr,course_PG=coursePG,UG_specialiazation=UGspe,UG_college=UGcollege,
                                            UG_year_of_passing=UGyearpass,gate_score=gatescore,Applicable_to_PG=ApptoPG,
                                            ob_profile=obprofile,expr=expr)
+
         u.save()
         return HttpResponseRedirect('/student/login')
-    return render(request,
-            'StudentLogin/profile.html',
-            {})
-
+    return render(request, 'StudentLogin/profile.html', {})
 
 class CompanyList(ListView):
     template_name = 'StudentLogin/display.html'
     model = Company_details
+
+class ProfileDetailView(DetailView):
+    model = User
+    template_name = 'StudentLogin/update.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ProfileDetailView, self).get_context_data(**kwargs)
+        context['user_info'] = Student_details.objects.get(user=self.get_object())
+        return context
 
 
 def index(request):
     temp = 'StudentLogin/index.html'
     return render(request,temp,{})
 
+
 def edit(request,ak):
+    a = Student_details.objects.get(id=ak)
     if request.method == 'POST':
-        u = User.objects.get(id=ak)
+        u = Student_details.objects.get(id=ak)
         u.name = request.POST.get('name')
         u.middleName = request.POST.get('middleName')
         u.lastName = request.POST.get('lastName')
@@ -125,8 +134,6 @@ def edit(request,ak):
         u.tenth_percentage = request.POST.get('tenth_percentage')
         u.twelth_percentage = request.POST.get('twelth_percentage')
         u.Internship_details = request.POST.get('Internship_details')
-        u.tenth_board = request.POST.get('tenth_board')
-        u.twelth_board = request.POST.get('twelth_board')
         u.address = request.POST.get('address')
         u.district = request.POST.get('district')
         u.state = request.POST.get('state')
@@ -135,6 +142,4 @@ def edit(request,ak):
         u.contact = request.POST.get('contact')
         u.save()
         return HttpResponseRedirect('/student/index')
-    return render(request,
-            'StudentLogin/edit.html',
-            {})
+    return render(request,'StudentLogin/edit.html',{'a':a})
