@@ -67,20 +67,36 @@
         <!-- /.container-fluid -->
     </nav>
 
+
     <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container" id="Annocement">
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome To Our CIR!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
+                <div>
+                  <p> Announcements: </p>
+                  {% for Announcements in object_list %}
+                  <tr>
+                   <td id="blinker"><a href="{{Announcements.link}}">{{Announcements.link}}</a></td><br>
+                  </tr>
+                  {% endfor %}
+                </div>
             </div>
         </div>
+        <script>
+        var blink_speed = 500;
+        var t = setInterval(function () {
+        var ele = document.getElementById('blinker');
+        ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+        }, blink_speed);
+        </script>
     </header>
     <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About CIR</h2>
+                    <blink><h2 class="section-heading">About CIR</h2></blink>
                     <h3 class="section-subheading text-muted">Begin your journey here and lets proceed!</h3>
                 </div>
             </div>

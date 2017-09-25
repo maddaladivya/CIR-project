@@ -7,6 +7,12 @@ body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.blink {
+  animation-duration: 8000ms;    /*blinking speed decreases and increase */
+  animation-name: tgle;
+  animation-iteration-count: infinite;
+}
+
 .text-muted {
   color: #777777;
 }

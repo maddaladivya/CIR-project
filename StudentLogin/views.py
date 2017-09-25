@@ -11,6 +11,7 @@ from django.contrib import messages
 from StudentLogin.forms import UserForm
 from cir.models import Company_details
 from StudentLogin.models import Student_details
+from faculty.models import Announcements
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.models import User
 # Create your views here.
@@ -116,9 +117,10 @@ class ProfileDetailView(DetailView):
         return context
 
 
-def index(request):
-    temp = 'StudentLogin/index.html'
-    return render(request,temp,{})
+class index(ListView):
+    model = Announcements
+    template_name = 'StudentLogin/index.html'
+
 
 
 def edit(request,ak):

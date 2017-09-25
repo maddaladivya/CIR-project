@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^home/$', views.home, name="home"),
     url(r'^students/$', StudentList.as_view()),
     url(r'^upload/(?P<pk>\d+)/$', views.upload, name="upload"),
+    url(r'^link/$', views.Announcement, name="link"),
 ]

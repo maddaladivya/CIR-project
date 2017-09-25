@@ -1,0 +1,12 @@
+<html>
+<head>
+</head>
+<body>
+  <form method="post">
+    {% csrf_token %}
+    <input type="text" name="link" placeholder="place your link here"/>
+    <input type="date" name="date" placeholder="expiry date"/>
+    <button type="submit">Upload</button>
+  </form>
+</body>
+</html>

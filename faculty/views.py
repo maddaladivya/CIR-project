@@ -4,6 +4,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from StudentLogin.models import Student_details
+from django.core.management.base import BaseCommand
+from django.utils import timezone
+from faculty.models import Announcements
 
 # Create your views here.
 
@@ -15,15 +18,21 @@ class StudentList(ListView):
     template_name = 'faculty/display.html'
     model = Student_details
 
+def Announcement(request):
+    if request.method == 'POST':
+        link = request.POST.get('link')
+        date = request.POST.get('date')
+        u = Announcements.objects.create(link=link, expiry_date=date)
+        u.save()
+        return render(request,'faculty/main.html',{})
+    return render(request,'faculty/link.html',{})
 
-"""class StudentDetailView(DetailView):
-    model = User
-    template_name = 'StudentLogin/update.html'
+class Command(BaseCommand):
+    help = 'Deletes expired rows'
 
-    def get_context_data(self, **kwargs):
-        context = super(ProfileDetailView, self).get_context_data(**kwargs)
-        context['user_info'] = Student_details.objects.get(user=self.get_object())
-        return context"""
+    def handle(self, *args, **options):
+        now = timezone.now()
+        Announcements.objects.filter(expire_time__lt=now).delete()
 
 
 def upload(request, pk):
