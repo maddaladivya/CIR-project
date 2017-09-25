@@ -6,7 +6,7 @@ from django.db import models
 # Create your models here.
 class Announcements(models.Model):
     link = models.URLField(blank=True, null=True)
-    expiry_date = models.DateField()
+    expiry_date = models.DateTimeField()
 
     @property
     def is_expired(self):
