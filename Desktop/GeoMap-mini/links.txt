@@ -1,0 +1,19 @@
+https://docs.mapbox.com/mapbox-gl-js/example/toggle-layers/
+
+https://docs.mapbox.com/mapbox-gl-js/example/color-switcher/
+
+** https://gis.stackexchange.com/questions/129891/javascript-arcgis-dropdown-menu-with-layers
+
+** http://duspviz.mit.edu/web-map-workshop/leaflet-javascript-interactions/
+
+https://docs.mapbox.com/mapbox-gl-js/api/#map.event:click
+
+https://docs.mapbox.com/mapbox-gl-js/api/#map#setfilter
+
+** https://github.com/mapbox/mapbox-gl-js/issues/2323
+
+https://bl.ocks.org/danswick/b97d1517b648072020c89e792f3b678c
+
+https://bl.ocks.org/danswick/339d8d5a22563aa0640d
+
+https://gis.stackexchange.com/questions/277023/how-to-filter-layer-features-by-value?rq=1

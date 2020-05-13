@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>flask_test</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style type='text/css'>
+.map-overlay {
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+position: absolute;
+width: 200px;
+top: 0;
+left: 0;
+padding: 10px;
+}
+
+.map-overlay .map-overlay-inner {
+background-color: #fff;
+box-shadow:0 1px 2px rgba(0, 0, 0, 0.10);
+border-radius: 3px;
+padding: 10px;
+margin-bottom: 10px;
+}
+
+.map-overlay-inner fieldset {
+border: none;
+padding: 0;
+margin: 0 0 10px;
+}
+
+.map-overlay-inner fieldset:last-child {
+margin: 0;
+}
+
+.map-overlay-inner select {
+width: 100%;
+}
+
+.map-overlay-inner label {
+display: block;
+font-weight: bold;
+margin: 0 0 5px;
+}
+
+.map-overlay-inner button {
+display: inline-block;
+width: 36px;
+height: 20px;
+border: none;
+cursor: pointer;
+}
+
+.map-overlay-inner button:focus {
+outline: none;
+}
+
+.map-overlay-inner button:hover {
+box-shadow:inset 0 0 0 3px rgba(0, 0, 0, 0.10);
+}
+    #info {
+        display: block;
+        position: relative;
+        margin: 0px auto;
+        width: 50%;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 12px;
+        text-align: center;
+        color: #222;
+        background: #fff;
+    }
+    .legend {
+        background-color: #fff;
+        border-radius: 3px;
+        bottom: 30px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        padding: 10px;
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+    }
+    .legend h4 {
+        margin: 0 0 10px;
+    }
+    .legend div span {
+        border-radius: 50%;
+        display: inline-block;
+        height: 10px;
+        margin-right: 5px;
+        width: 10px;
+    }
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 18px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+</style>
+
+<div id='district-legend' class='legend'>
+<h2>District Cruelty By Husband and Male Relatives Count Index</h2>
+<div style="font-size:20px"><span style='background-color: #026514'></span>40-45</div>
+<div style="font-size:20px"><span style='background-color: #027606'></span>35-40</div>
+<div style="font-size:20px"><span style='background-color: #118702'></span>30-35</div>
+<div style="font-size:20px"><span style='background-color: #299802'></span>25-30</div>
+<div style="font-size:20px"><span style='background-color: #47aa01'></span>20-25</div>
+<div style="font-size:20px"><span style='background-color: #69bb01'></span>15-20</div>
+<div style="font-size:20px"><span style='background-color: #91cc01'></span>10-15</div>
+<div style="font-size:20px"><span style='background-color: #bedd01'></span>5-10</div>
+<div style="font-size:20px"><span style='background-color: #eeec00'></span>0-5</div>
+</div>
+
+<div id='map'></div>
+<div class='map-overlay top'>
+    <div class='map-overlay-inner'>
+        <form name="startpage" method="POST" action="{{ url_for('test') }}">
+        <div class="form-group">
+            <div class="input-group">
+                <select name = "layer_type" id = "layer_type">
+                    <option value="choose">Choose K Value</option>
+                    <option value="2">2 clusters</option>
+                    <option value="3">3 clusters</option>
+                    <option value="4">4 clusters</option>
+                    <option value="5">5 clusters</option>
+                </select>
+            </div>
+            <button type="submit" name="submit" value="success" class="btn btn-default">Submit</button>
+        </div>
+        </form>
+        <br>
+        <form name="startpage1" method="POST" action="{{ url_for('test') }}">
+            <div class="form-group">
+                <div class="input-group">
+                    <select name = "cluster_layer_type" id = "cluster_layer_type">
+                        <option value="choose">Choose cluster</option>
+                        <option value="10">Cluster 1</option>
+                        <option value="11">Cluster 2</option>
+                        <option value="12">Cluster 3</option>
+                        <option value="13">Cluster 4</option>
+                        <option value="14">Cluster 5</option>
+                    </select>
+                </div>
+                <button type="submit" name="submit" value="success" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+  mapboxgl.accessToken = '{{ mapbox_access_token }}';
+  var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/outdoors-v10', //stylesheet location
+    center: [75.0896847104018,28.50769793319583], // starting position
+    minZoom: 3,
+    zoom: 4.7 // starting zoom
+  });
+
+  zoomThreshold = 4.7
+
+  // chloropleth layer
+  map.on('load', function() {
+    map.addSource('k5c2-9oaowz', {
+      type: 'vector',
+      url: 'mapbox://chiranjeeb2410.22qm37sj'
+    });
+
+    map.addLayer({
+        'id': 'districts',
+        'source': 'k5c2-9oaowz',
+        'source-layer': 'k5c2-9oaowz',
+        'minzoom': zoomThreshold,
+        'type': 'fill',
+        'filter': ['has', 'dowry_count'],
+        'layout': {
+            'visibility': 'visible'
+        },
+        'paint': {
+            "fill-color": ['interpolate', ['linear'],["get","dowry_count"],0,"#eeec00",5,"#bedd01",10,
+            "#91cc01",15,"#69bb01",20,"#47aa01",25,"#299802",30,
+            "#118702",35,"#027606",40,"#026514",45,"#01541d"],
+            'fill-opacity': 0.7
+        }
+    }, 'waterway-label');
+
+    map.on('click', 'districts', function (e) {
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(e.features[0].properties.name + ", "
+            + e.features[0].properties.dowry_count)
+            .addTo(map);
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.FullscreenControl());
+  });
+
+  map.addControl(new mapboxgl.FullscreenControl());
+
+</script>
+
+</body>
+</html>
